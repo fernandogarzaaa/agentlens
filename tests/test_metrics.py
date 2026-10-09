@@ -413,3 +413,33 @@ def test_percentile_validates_q():
         percentile([1.0], 100.5)
     assert percentile([1.0, 3.0], 100) == 3.0
     assert math.isclose(percentile([1.0, 3.0], 0), 1.0)
+
+
+def test_values_equal_returns_real_booleans():
+    # Callers serialise these results; they must be bools, never None.
+    assert values_equal(True, 1) is False
+    assert values_equal(2, "2") is False
+    assert values_equal("a", 1) is False
+    assert values_equal([1], [1, 2]) is False
+    assert values_equal({"a": 1}, [1]) is False
+    assert values_equal("a", "a") is True
+
+
+def test_score_arguments_lists_are_lists_of_names():
+    s = score_arguments({"x": 1, "debug": ABSENT}, {"x": 1, "debug": False})
+    assert s.matched == ["x"] and s.mismatched == ["debug"]
+
+
+def test_matching_defaults_normalise_strings():
+    ((_, j, s),) = match_calls([tc("w", city="PARIS")], [tc("w", city="paris")])
+    assert j == 0 and s.exact
+    assert argument_match([tc("w", city="PARIS")], [tc("w", city=" paris ")]).all_exact
+    assert score_arguments({"c": "PARIS"}, {"c": "paris"}).exact
+
+
+def test_answer_check_defaults():
+    c = AnswerCheck()
+    assert c.judge is False and c.case_sensitive is False and c.tolerance == 1e-6
+    d = AnswerCheck.from_dict({"contains": ["x"]})
+    assert d.judge is False and d.case_sensitive is False and d.tolerance == 1e-6
+    assert d.regex is None and d.equals is None and d.number is None

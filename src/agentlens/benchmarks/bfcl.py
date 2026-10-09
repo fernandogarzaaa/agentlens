@@ -105,10 +105,20 @@ def _tool(fn: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _expected_option(option: Any) -> Any:
+    """One acceptable value. Inside it, dict values are again lists of acceptable values (BFCL's
+    nested format); list elements are literal (but dicts inside lists follow the dict rule)."""
+    if isinstance(option, dict):
+        return {k: _expected_value(v) for k, v in option.items()}
+    if isinstance(option, list):
+        return [_expected_option(x) for x in option]
+    return option
+
+
 def _expected_value(options: Any) -> Any:
     if not isinstance(options, list):
-        return options
-    values: list[Any] = [ABSENT if o == "" else o for o in options]
+        return _expected_option(options)
+    values: list[Any] = [ABSENT if o == "" else _expected_option(o) for o in options]
     if len(values) == 1 and values[0] != ABSENT:
         return values[0]
     return {"$any": values}

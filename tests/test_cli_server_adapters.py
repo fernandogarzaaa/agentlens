@@ -432,3 +432,113 @@ def test_langgraph_adapter_nested_in_agentlens_run_and_errors():
     assert spans["execute_tool t"].attributes["gen_ai.tool.call.arguments"] == {"input": "plain text"}
     assert spans["execute_tool t"].status == "error"
     assert _usage(object()) == (0, 0, None)
+
+
+def test_eval_from_traces_rescoring(recorded, tmp_path):
+    traces = tmp_path / "v1.jsonl"
+    traces.write_text((recorded / "v1.jsonl").read_text())
+    out = tmp_path / "rescored.json"
+    assert (
+        main(
+            [
+                "eval",
+                str(EX / "suite.yaml"),
+                "--from-traces",
+                str(traces),
+                "--label",
+                "v1",
+                "--out",
+                str(out),
+                "--quiet",
+            ]
+        )
+        == 0
+    )
+    rescored = json.loads(out.read_text())
+    original = json.loads((recorded / "v1.json").read_text())
+    for key in ("task_success", "tool_f1", "args_exact", "avg_steps", "total_tokens"):
+        assert rescored["summary"][key] == original["summary"][key]
+    assert rescored["metadata"]["scored_from_traces"]
+    # a later re-run of one case supersedes the earlier trace of that case
+    assert (
+        main(
+            [
+                "eval",
+                str(EX / "suite.yaml"),
+                *V2,
+                "--ids",
+                "weather-tokyo-f",
+                "--trace",
+                str(traces),
+                "--quiet",
+                "--out",
+                str(tmp_path / "one.json"),
+            ]
+        )
+        == 0
+    )
+    assert json.loads((tmp_path / "one.json").read_text())["summary"]["n_cases"] == 1
+    assert main(["eval", str(EX / "suite.yaml"), "--from-traces", str(traces), "--out", str(out), "--quiet"]) == 0
+    cases = {c["case_id"]: c for c in json.loads(out.read_text())["cases"]}
+    assert len(cases) == 20 and cases["weather-tokyo-f"]["success"] is False
+    empty = tmp_path / "e.jsonl"
+    empty.write_text("")
+    assert main(["eval", str(EX / "suite.yaml"), "--from-traces", str(empty)]) == 2
+
+
+def test_bfcl_nested_possible_answers():
+    questions = [
+        {
+            "id": "q",
+            "question": [[{"role": "user", "content": "x"}]],
+            "function": [{"name": "f", "parameters": {"type": "dict", "properties": {}}}],
+        }
+    ]
+    answers = [
+        {
+            "id": "q",
+            "ground_truth": [
+                {
+                    "f": {
+                        "info": [{"name": ["John Doe"], "email": ["j@x.com", ""]}],
+                        "conds": [[{"field": ["age"], "op": [">", "gt"]}]],
+                        "coords": [[1.5, -2.0]],
+                    }
+                }
+            ],
+        }
+    ]
+    (case,) = convert("simple_python", questions, answers)["cases"]
+    args = case["expected_tool_calls"][0]["arguments"]
+    assert args["info"] == {"name": "John Doe", "email": {"$any": ["j@x.com", ABSENT]}}
+    assert args["conds"] == [{"field": "age", "op": {"$any": [">", "gt"]}}]
+    assert args["coords"] == [1.5, -2.0]
+    from agentlens.metrics import score_arguments
+
+    assert score_arguments(
+        args, {"info": {"name": "john doe"}, "conds": [{"field": "age", "op": "gt"}], "coords": [1.5, -2]}
+    ).exact
+
+
+def test_judge_cli_aborts_when_endpoint_is_down(tmp_path, monkeypatch):
+    monkeypatch.setattr("agentlens.llm.time.sleep", lambda s: None)
+    data = tmp_path / "pairs.jsonl"
+    data.write_text(
+        "".join(json.dumps({"question": "q", "answer_a": "a", "answer_b": "b", "label": "A"}) + "\n" for _ in range(4))
+    )
+    rc = main(
+        [
+            "judge",
+            str(data),
+            "--model",
+            "m",
+            "--base-url",
+            "http://127.0.0.1:9/v1",
+            "--timeout",
+            "0.5",
+            "--max-consecutive-failures",
+            "2",
+            "--quiet",
+        ]
+    )
+    assert rc == 1

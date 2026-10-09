@@ -21,15 +21,14 @@ summaries carry ``cost_known = false`` instead of silently reporting $0.
 from __future__ import annotations
 
 import fnmatch
-import sys
 from dataclasses import dataclass
 from importlib import resources
 from pathlib import Path
 from typing import Any
 
-if sys.version_info >= (3, 11):
+try:
     import tomllib
-else:  # pragma: no cover - exercised on 3.10 in CI
+except ModuleNotFoundError:  # pragma: no cover - Python 3.10
     import tomli as tomllib
 
 __all__ = ["ModelPrice", "Pricing", "PricingError"]
@@ -99,9 +98,12 @@ class Pricing:
         if not isinstance(aliases, dict) or not all(isinstance(v, str) for v in aliases.values()):
             raise PricingError("[aliases] must map model names to model names")
         models = {name: _price_from_table(name, t) for name, t in models_raw.items()}
+        lowered = {m.lower() for m in models}
         for alias, target in aliases.items():
             if target not in models:
                 raise PricingError(f"alias {alias!r} points at unknown model {target!r}")
+            if alias.lower() in lowered:
+                raise PricingError(f"alias {alias!r} shadows a model of the same name")
         return cls(models, aliases)
 
     @classmethod
@@ -125,27 +127,29 @@ class Pricing:
 
     # ---- lookup --------------------------------------------------------------------
     def lookup(self, model: str) -> ModelPrice | None:
-        """Exact name, then alias, then the longest matching glob pattern; ``None`` if nothing matches."""
+        """Find the price for ``model`` (case-insensitive); ``None`` if nothing matches.
+
+        Order: alias, then the best-matching entry: exact names and glob patterns are ranked by the
+        number of non-``*`` characters, an exact name beats a glob of equal length, and on a full tie
+        the first table entry wins. A file path such as ``/models/qwen2.5-0.5b-instruct-q4_k_m.gguf``
+        (what local servers often report) is looked up by its base name without ``.gguf``.
+        """
         if not model:
             return None
-        if model in self.models:
-            return self.models[model]
-        if model in self.aliases:
-            return self.models[self.aliases[model]]
-        # Local servers often report a file path ("/models/qwen2.5-0.5b-instruct-q4_k_m.gguf").
-        name = model.replace("\\", "/").rsplit("/", 1)[-1]
+        name = model.replace("\\", "/").split("/")[-1]
         if name.lower().endswith(".gguf"):
             name = name[: -len(".gguf")]
-        if name != model:
-            return self.lookup(name)
-        lowered = model.lower()
-        best: tuple[int, str] | None = None
-        for pattern in self.models:
-            if any(ch in pattern for ch in "*?[") and fnmatch.fnmatchcase(lowered, pattern.lower()):
-                specificity = len(pattern.replace("*", ""))
-                if best is None or specificity > best[0]:
-                    best = (specificity, pattern)
-        return self.models[best[1]] if best is not None else None
+        key = name.lower()
+        aliases = {alias.lower(): target for alias, target in self.aliases.items()}
+        if key in aliases:
+            return self.models[aliases[key]]
+        best: tuple[tuple[int, bool], ModelPrice] | None = None
+        for pattern, price in self.models.items():
+            if fnmatch.fnmatchcase(key, pattern.lower()):
+                rank = (len(pattern.replace("*", "")), "*" not in pattern)
+                if best is None or rank > best[0]:
+                    best = (rank, price)
+        return best[1] if best is not None else None
 
     def cost(
         self, model: str, input_tokens: int = 0, output_tokens: int = 0, cached_input_tokens: int = 0

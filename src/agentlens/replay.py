@@ -131,14 +131,25 @@ def suite_from_traces(traces: Sequence[Trace], name: str = "replay") -> tuple[Su
 
 def baseline_from_traces(traces: Sequence[Trace], suite: Suite) -> EvalResult:
     """Score the recorded runs against ``suite`` (cases matched by case id) without re-running anything."""
+    latest: dict[str, Trace] = {}
+    for i, trace in enumerate(traces):  # traces are ordered by start time: a re-run supersedes older runs
+        cid = _case_id(trace, i)
+        if suite.get(cid) is not None:
+            latest[cid] = trace
     results: list[CaseResult] = []
-    for i, trace in enumerate(traces):
-        case = suite.get(_case_id(trace, i))
-        if case is None:
+    for case in suite.cases:
+        recorded = latest.get(case.id)
+        if recorded is None:
             continue
-        out = trace.output
+        out = recorded.output
+        root = recorded.root
+        error = root.status_message if root is not None and root.status == "error" else None
+        if error is None:
+            error = next(
+                (s.status_message for s in recorded.spans if s.kind == SpanKind.LLM and s.status == "error"), None
+            )
         results.append(
-            score_case(case, trace.tool_calls(), None if out is None else str(out), trace.summary(), error=None)
+            score_case(case, recorded.tool_calls(), None if out is None else str(out), recorded.summary(), error=error)
         )
     return EvalResult(suite=suite.name, agent="recorded", model="", cases=results)
 

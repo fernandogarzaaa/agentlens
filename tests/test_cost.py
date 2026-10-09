@@ -68,10 +68,11 @@ def test_lookup_most_specific_glob_wins():
     assert p.lookup("qwen2.5-14b") == ModelPrice(0.0, 0.0)
 
 
-def test_lookup_glob_is_case_insensitive_but_exact_names_are_not_globbed():
+def test_lookup_glob_is_case_insensitive_and_exact_names_need_a_full_match():
     p = _pricing()
     assert p.lookup("Qwen2.5-0.5B-Instruct") == ModelPrice(0.0, 0.0)
     assert p.lookup("gpt-4o-mini-extra") is None  # no implicit prefix match
+    assert p.lookup("gpt-4o-min") is None
 
 
 def test_lookup_strips_paths_and_gguf_suffix():
@@ -158,3 +159,41 @@ def test_merged_overrides():
     assert m.lookup("mini") == ModelPrice(9, 9)
     assert base.lookup("gpt-4o-mini") == ModelPrice(0.15, 0.6)  # original untouched
     assert len(m) == len(base)
+
+
+def test_lookup_exact_and_alias_are_case_insensitive():
+    p = _pricing()
+    assert p.lookup("GPT-4o-Mini") == ModelPrice(0.15, 0.6)
+    assert p.lookup("MINI") == ModelPrice(0.15, 0.6)
+
+
+def test_exact_name_beats_glob_of_equal_specificity():
+    p = Pricing({"abc*": ModelPrice(1, 1), "abc": ModelPrice(2, 2)})
+    assert p.lookup("abc") == ModelPrice(2, 2)
+    q = Pricing({"abc": ModelPrice(2, 2), "abc*": ModelPrice(1, 1)})
+    assert q.lookup("abc") == ModelPrice(2, 2)
+    assert q.lookup("abcd") == ModelPrice(1, 1)
+
+
+def test_first_entry_wins_on_full_tie():
+    p = Pricing({"abc?": ModelPrice(1, 1), "ab?d": ModelPrice(2, 2)})
+    assert p.lookup("abcd") == ModelPrice(1, 1)
+    q = Pricing({"ab?d": ModelPrice(2, 2), "abc?": ModelPrice(1, 1)})
+    assert q.lookup("abcd") == ModelPrice(2, 2)
+
+
+def test_more_specific_glob_wins_regardless_of_order():
+    p = Pricing({"q-7b*": ModelPrice(7, 7), "q-*": ModelPrice(1, 1)})
+    assert p.lookup("q-7b-instruct") == ModelPrice(7, 7)
+    assert p.lookup("q-1b") == ModelPrice(1, 1)
+
+
+def test_path_lookup_uses_last_component_only():
+    p = Pricing({"m": ModelPrice(1, 1), "a/b/m": ModelPrice(9, 9)})
+    assert p.lookup("/x/y/a/b/m.gguf") == ModelPrice(1, 1)
+    assert p.lookup("dir/m") == ModelPrice(1, 1)
+
+
+def test_alias_may_not_shadow_a_model():
+    with pytest.raises(PricingError, match="shadows"):
+        Pricing.from_dict({"models": {"m": {"input_per_mtok": 1, "output_per_mtok": 1}}, "aliases": {"M": "m"}})

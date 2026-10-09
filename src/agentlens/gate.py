@@ -19,14 +19,13 @@
 
 from __future__ import annotations
 
-import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-if sys.version_info >= (3, 11):
+try:
     import tomllib
-else:  # pragma: no cover
+except ModuleNotFoundError:  # pragma: no cover - Python 3.10
     import tomli as tomllib
 
 __all__ = ["GateConfigError", "Check", "GateConfig", "GateResult", "load_gate_config", "evaluate_gate"]
@@ -104,10 +103,9 @@ def _number(value: Any, where: str) -> float:
     return float(value)
 
 
-def _metric(name: str, where: str) -> str:
+def _check_metric(name: str, where: str) -> None:
     if name not in KNOWN_METRICS:
         raise GateConfigError(f"{where}: unknown metric {name!r}; known: {sorted(KNOWN_METRICS)}")
-    return name
 
 
 def parse_gate_config(data: dict[str, Any], base_dir: Path | None = None) -> GateConfig:
@@ -119,7 +117,7 @@ def parse_gate_config(data: dict[str, Any], base_dir: Path | None = None) -> Gat
     if not isinstance(thresholds, dict):
         raise GateConfigError("[thresholds] must be a table")
     for name, rule in thresholds.items():
-        _metric(name, "thresholds")
+        _check_metric(name, "thresholds")
         if not isinstance(rule, dict) or not rule or set(rule) - {"min", "max"}:
             raise GateConfigError(f"thresholds.{name} must be a table with 'min' and/or 'max'")
         if "min" in rule:
@@ -139,7 +137,7 @@ def parse_gate_config(data: dict[str, Any], base_dir: Path | None = None) -> Gat
         if not isinstance(table, dict):
             raise GateConfigError(f"baseline.{key} must be a table")
         for name, limit in table.items():
-            _metric(name, f"baseline.{key}")
+            _check_metric(name, f"baseline.{key}")
             value = _number(limit, f"baseline.{key}.{name}")
             if value < 0:
                 raise GateConfigError(f"baseline.{key}.{name} must be >= 0")

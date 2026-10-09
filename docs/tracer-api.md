@@ -14,25 +14,25 @@ PyYAML).
 from agentlens import Tracer, JSONLExporter, SQLiteExporter, OTLPExporter, Pricing
 
 tracer = Tracer(
-    service_name="sqlpilot",                         # becomes service.name in OTLP
-    exporters=[JSONLExporter("traces.jsonl")],       # any number of exporters
-    pricing=Pricing.default(),                       # optional; or Pricing.from_toml("prices.toml")
+    service_name="sqlpilot",  # becomes service.name in OTLP
+    exporters=[JSONLExporter("traces.jsonl")],  # any number of exporters
+    pricing=Pricing.default(),  # optional; or Pricing.from_toml("prices.toml")
 )
 
-with tracer.run("answer-question", input=question, case_id=None) as run:   # root span, new trace
-    with tracer.agent_step(0):                                             # optional grouping
+with tracer.run("answer-question", input=question, case_id=None) as run:  # root span, new trace
+    with tracer.agent_step(0):  # optional grouping
         with tracer.llm_call("gpt-4o-mini") as llm:
             resp = client.chat(...)
-            llm.record_usage(input_tokens=resp.usage.prompt_tokens,
-                             output_tokens=resp.usage.completion_tokens,
-                             model=resp.model)                              # cost from the pricing table
+            llm.record_usage(
+                input_tokens=resp.usage.prompt_tokens, output_tokens=resp.usage.completion_tokens, model=resp.model
+            )  # cost from the pricing table
         with tracer.tool_call("run_sql", arguments={"query": sql}) as tool:
             rows = db.execute(sql)
             tool.set_result({"rows": len(rows)})
     run.set_output(answer)
 
-summary = tracer.summary(run.trace_id)   # RunSummary: tokens, cost_usd, cost_known, steps, latency_s ...
-tracer.shutdown()                        # flush and close exporters
+summary = tracer.summary(run.trace_id)  # RunSummary: tokens, cost_usd, cost_known, steps, latency_s ...
+tracer.shutdown()  # flush and close exporters
 ```
 
 ## `Tracer`
@@ -82,15 +82,19 @@ ends `agentlens.run.{llm_calls,tool_calls,steps,input_tokens,output_tokens,cost_
 
 ```python
 import agentlens
+
 agentlens.configure("my-service", exporters=[agentlens.JSONLExporter("traces.jsonl")])
 
-@agentlens.trace_tool()                 # span "execute_tool search", arguments + result captured
+
+@agentlens.trace_tool()  # span "execute_tool search", arguments + result captured
 def search(query: str) -> list[str]: ...
 
-@agentlens.trace_llm(model="gpt-4o-mini")   # records usage if the return value has an OpenAI-style .usage
+
+@agentlens.trace_llm(model="gpt-4o-mini")  # records usage if the return value has an OpenAI-style .usage
 def ask(prompt): ...
 
-@agentlens.trace_run()                  # new trace per call
+
+@agentlens.trace_run()  # new trace per call
 def answer(question): ...
 ```
 

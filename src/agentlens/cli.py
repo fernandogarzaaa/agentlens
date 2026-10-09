@@ -162,9 +162,11 @@ def cmd_eval(args: argparse.Namespace) -> int:
     from agentlens.report import eval_html, eval_markdown
 
     try:
-        suite = load_suite(args.suite).filter(tags=args.tags, limit=args.limit)
+        suite = load_suite(args.suite).filter(tags=args.tags, ids=args.ids, limit=args.limit)
     except SuiteError as exc:
         raise CLIError(str(exc)) from None
+    if args.from_traces:
+        return _eval_from_traces(args, suite)
     agent, label, model = _build_agent(args)
     tracer = Tracer(service_name=label, exporters=_exporters(args, label), pricing=_pricing(args))
     done = [0]
@@ -186,6 +188,30 @@ def cmd_eval(args: argparse.Namespace) -> int:
         on_case=progress,
     )
     tracer.shutdown()
+    if args.out:
+        result.save(args.out)
+    if args.html:
+        _write(args.html, eval_html(result))
+    md = eval_markdown(result)
+    if args.report:
+        _write(args.report, md)
+    if not args.quiet or not args.out:
+        sys.stdout.write(md)
+    return EXIT_OK
+
+
+def _eval_from_traces(args: argparse.Namespace, suite: Any) -> int:
+    """Score recorded runs against the suite without calling any model (re-scoring after a suite fix)."""
+    from agentlens.replay import baseline_from_traces
+    from agentlens.report import eval_html, eval_markdown
+    from agentlens.store import load_traces
+
+    result = baseline_from_traces(load_traces(args.from_traces), suite)
+    if not result.cases:
+        raise CLIError("no recorded runs match the suite's case ids")
+    result.agent = args.label or "recorded"
+    result.model = args.model or ""
+    result.metadata["scored_from_traces"] = [str(p) for p in args.from_traces]
     if args.out:
         result.save(args.out)
     if args.html:
@@ -312,18 +338,28 @@ def cmd_judge(args: argparse.Namespace) -> int:
     model = args.model or "mock-judge"
     predictions: list[Any] = []
     human: list[Any] = []
+    failed_calls = consecutive = 0
     for i, row in enumerate(rows, 1):
         if args.mode == "pairwise":
             verdict = PairwiseJudge(client, model, rubric, swap=args.swap, max_tokens=args.max_tokens).compare(
                 row["question"], row["answer_a"], row["answer_b"]
             )
             predictions.append(verdict.winner)
+            failed = any(r.startswith("judge call failed") for r in verdict.raw)
         else:
             v = RubricJudge(client, model, rubric, max_tokens=args.max_tokens).score(
                 row["question"], row["answer"], row.get("reference")
             )
             predictions.append(None if v.passed is None else ("pass" if v.passed else "fail"))
+            failed = v.reasoning.startswith("judge call failed")
         human.append(row["label"])
+        failed_calls += int(failed)
+        consecutive = consecutive + 1 if failed else 0
+        if consecutive >= args.max_consecutive_failures:
+            print(
+                f"agentlens: {consecutive} judge calls in a row failed; stopping (is the endpoint up?)", file=sys.stderr
+            )
+            return EXIT_FAIL
         if not args.quiet:
             print(f"[{i}/{len(rows)}] judge={predictions[-1]} human={row['label']}", file=sys.stderr)
     labels = ["A", "B", "tie"] if args.mode == "pairwise" else ["pass", "fail"]
@@ -334,6 +370,7 @@ def cmd_judge(args: argparse.Namespace) -> int:
         "swap": args.swap,
         "data": str(args.data),
         "rubric": rubric.name,
+        "failed_calls": failed_calls,
     }
     out = json.dumps(report.to_dict(), indent=2) + "\n"
     _write(args.out, out) if args.out else None
@@ -386,6 +423,13 @@ def build_parser() -> argparse.ArgumentParser:
     e.add_argument("--html", default=None, help="write an HTML report here")
     e.add_argument("--limit", type=int, default=None)
     e.add_argument("--tags", nargs="*", default=None)
+    e.add_argument("--ids", nargs="*", default=None, help="only these case ids")
+    e.add_argument(
+        "--from-traces",
+        nargs="+",
+        default=None,
+        help="score recorded runs (trace stores) against the suite instead of running the agent",
+    )
     e.add_argument("--concurrency", type=int, default=1)
     e.add_argument("--judge-model", default=None, help="LLM-as-judge model for final_answer.judge cases")
     e.add_argument("--judge-base-url", default=None)
@@ -435,6 +479,9 @@ def build_parser() -> argparse.ArgumentParser:
     j.add_argument("--out", default=None)
     j.add_argument("--predictions", default=None)
     j.add_argument("--quiet", action="store_true")
+    j.add_argument(
+        "--max-consecutive-failures", type=int, default=5, help="abort when the judge endpoint keeps failing"
+    )
     _agent_args(j)
     j.set_defaults(func=cmd_judge)
 

@@ -104,9 +104,7 @@ def _may_be_absent(spec: Any) -> bool:
 def _arg_ok(spec: Any, actual: dict[str, Any], key: str, normalize_strings: bool) -> bool:
     if key not in actual:
         return _may_be_absent(spec)
-    if spec == ABSENT:
-        return False
-    return values_equal(spec, actual[key], normalize_strings)
+    return spec != ABSENT and values_equal(spec, actual[key], normalize_strings)
 
 
 @dataclass

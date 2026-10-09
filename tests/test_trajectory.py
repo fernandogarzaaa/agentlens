@@ -164,3 +164,9 @@ def test_all_violations_collected():
     )
     v = check_constraints(c, calls("a", "a"), 2)
     assert len(v) == 6
+
+
+def test_order_constraint_with_same_tool_on_both_sides_never_fires():
+    c = Constraints(order=[("a", "a")])
+    assert check_constraints(c, calls("a"), 1) == []
+    assert check_constraints(c, calls("b", "a"), 2) == []

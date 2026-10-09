@@ -230,3 +230,15 @@ def test_result_to_dict():
             "message": "tool_f1 = 0.4 (min 0.5)",
         }
     ]
+
+
+def test_tolerance_boundaries_are_inclusive():
+    from agentlens.gate import _EPS
+
+    assert _EPS == 1e-9
+    assert evaluate_gate({"task_success": 0.8 - 1e-9}, _cfg(minimums={"task_success": 0.8})).passed
+    assert evaluate_gate({"latency_p95_s": 2.0 + 1e-9}, _cfg(maximums={"latency_p95_s": 2.0})).passed
+    assert evaluate_gate({"tool_f1": 0.0}, _cfg(max_drop={"tool_f1": 0.0}), {"tool_f1": 1e-9}).passed
+    assert evaluate_gate({"avg_steps": 1e-9}, _cfg(max_increase={"avg_steps": 0.0}), {"avg_steps": 0.0}).passed
+    assert not evaluate_gate({"tool_f1": 0.0}, _cfg(max_drop={"tool_f1": 0.0}), {"tool_f1": 3e-9}).passed
+    assert not evaluate_gate({"avg_steps": 3e-9}, _cfg(max_increase={"avg_steps": 0.0}), {"avg_steps": 0.0}).passed

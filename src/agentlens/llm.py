@@ -133,7 +133,7 @@ class OpenAICompatClient:
         base_url: str = "https://api.openai.com/v1",
         api_key: str | None = None,
         timeout_s: float = 120.0,
-        max_retries: int = 2,
+        max_retries: int = 3,
         extra_body: dict[str, Any] | None = None,
     ) -> None:
         self.base_url = base_url.rstrip("/")
@@ -175,7 +175,7 @@ class OpenAICompatClient:
             except (urllib.error.URLError, OSError, ValueError) as exc:
                 last_error = str(exc)
             if attempt < self.max_retries:
-                time.sleep(min(8.0, 0.5 * 2**attempt))
+                time.sleep(min(8.0, 1.0 * 2**attempt))
         raise LLMError(f"chat completion failed: {last_error}")
 
 
