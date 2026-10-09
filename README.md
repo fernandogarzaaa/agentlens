@@ -264,7 +264,25 @@ the GPT-4 reference above is on an even smaller, non-random subset.
 
 ## Quality
 
-QUALITY_PLACEHOLDER
+- **282 tests** (`pytest -q`), ruff and mypy (`disallow_untyped_defs`) clean. Two tests need the
+  `langgraph` extra and are skipped without it.
+- **Mutation testing** with [testteeth](https://pypi.org/project/testteeth/) on the pure core
+  (`metrics.py`, `trajectory.py`, `cost.py`, `gate.py`, run with their unit tests; see `[tool.testteeth]`
+  in `pyproject.toml` and `make mutation`):
+
+  | | Mutants | Killed | Survived | Not covered | Score |
+  |---|---|---|---|---|---|
+  | Before strengthening (commit `7ce7807`) | 452 | 428 | 24 | 0 | 94.7% |
+  | After (current `main`) | 442 | 440 | 0 | 2 | 99.5% |
+
+  The 24 survivors of the first run got targeted tests or were refactored away (the mutant count
+  changed because the code did). The two remaining "not covered" mutants are the
+  `import tomli as tomllib` fallback for Python < 3.11, which cannot run on the 3.12 interpreter used
+  here. Reports: [docs/mutation/](docs/mutation/). The baseline was regenerated from a clean
+  clone of `7ce7807` and matches the original run.
+- CI (`.github/workflows/ci.yml`) is written to run lint, the test matrix on Python 3.10 to 3.12, the
+  mock quickstart as a regression gate, and a non-blocking testteeth job on changed core functions;
+  see Limitations for what has actually been run.
 
 ## Limitations
 

@@ -1,0 +1,65 @@
+442 mutants
+testteeth: mutation grade for all selected code
+
+src/agentlens/cost.py
+  <module>                            50.0%    1/2   killed  WEAK
+      L32   swallow-exception `import tomli as tomllib` -> `pass`  [not covered]
+  ModelPrice.cost                    100.0%   21/21  killed  ok
+  _price_from_table                  100.0%   15/15  killed  ok
+  Pricing.__init__                   100.0%    2/2   killed  ok
+  Pricing.from_dict                  100.0%   11/11  killed  ok
+  Pricing.from_toml                  100.0%    3/3   killed  ok
+  Pricing.default                    100.0%    1/1   killed  ok
+  Pricing.merged                     100.0%    1/1   killed  ok
+  Pricing.lookup                     100.0%   12/12  killed  ok
+  Pricing.cost                       100.0%    5/5   killed  ok
+  Pricing.__contains__               100.0%    2/2   killed  ok
+  Pricing.__len__                    100.0%    1/1   killed  ok
+src/agentlens/gate.py
+  <module>                            50.0%    1/2   killed  WEAK
+      L29   swallow-exception `import tomli as tomllib` -> `pass`  [not covered]
+  Check.message                      100.0%   10/10  killed  ok
+  GateConfig.needs_baseline          100.0%    2/2   killed  ok
+  _number                            100.0%    4/4   killed  ok
+  _check_metric                      100.0%    2/2   killed  ok
+  parse_gate_config                  100.0%   35/35  killed  ok
+  load_gate_config                   100.0%    5/5   killed  ok
+  GateResult.passed                  100.0%    1/1   killed  ok
+  GateResult.failures                100.0%    2/2   killed  ok
+  GateResult.exit_code               100.0%    3/3   killed  ok
+  GateResult.to_dict                 100.0%    1/1   killed  ok
+  _value                             100.0%    3/3   killed  ok
+  evaluate_gate                      100.0%   29/29  killed  ok
+src/agentlens/metrics.py
+  <module>                           100.0%    3/3   killed  ok
+  ToolCall.from_dict                 100.0%    6/6   killed  ok
+  ToolCall.to_dict                   100.0%    1/1   killed  ok
+  _norm_str                          100.0%    1/1   killed  ok
+  _is_number                         100.0%    3/3   killed  ok
+  values_equal                       100.0%   42/42  killed  ok
+  _may_be_absent                     100.0%    7/7   killed  ok
+  _arg_ok                            100.0%    5/5   killed  ok
+  score_arguments                    100.0%   11/11  killed  ok
+  tool_selection                     100.0%   18/18  killed  ok
+  match_calls                        100.0%   18/18  killed  ok
+  argument_match                     100.0%   15/15  killed  ok
+  AnswerCheck.from_dict              100.0%    9/9   killed  ok
+  AnswerCheck.from_dict.as_list      100.0%    3/3   killed  ok
+  AnswerCheck.is_empty               100.0%    6/6   killed  ok
+  check_answer                       100.0%   29/29  killed  ok
+  check_answer.norm                  100.0%    1/1   killed  ok
+  mean                               100.0%    3/3   killed  ok
+  percentile                         100.0%   19/19  killed  ok
+src/agentlens/trajectory.py
+  <module>                           100.0%    1/1   killed  ok
+  _is_subsequence                    100.0%    2/2   killed  ok
+  match_trajectory                   100.0%   16/16  killed  ok
+  Constraints.from_dict              100.0%   19/19  killed  ok
+  Constraints.merged_over            100.0%    7/7   killed  ok
+  check_constraints                  100.0%   22/22  killed  ok
+
+Mutants: 442  killed: 440  survived: 0  not covered: 2  timeouts: 0
+Failure-path gaps: 0
+Mutation score: 99.5%
+Time: baseline 20.5s, total 1101.4s
+Next: `testteeth suggest` prints an agent-ready brief for each surviving mutant.
