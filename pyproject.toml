@@ -1,0 +1,91 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentlens"
+dynamic = ["version"]
+description = "Tracing and evaluation for tool-calling LLM agents: OpenTelemetry spans with token/cost accounting, trajectory metrics, LLM-as-judge calibration, replay diffs and a CI regression gate."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Fernando Garza", email = "fernandogarzaaa@gmail.com" }]
+keywords = ["llm", "agents", "evaluation", "tracing", "opentelemetry", "function-calling", "llm-as-judge"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Testing",
+  "Typing :: Typed",
+]
+# The core (tracer, exporters incl. OTLP/HTTP, eval, judge, gate, CLI) needs only PyYAML.
+dependencies = [
+  "pyyaml>=6.0,<7",
+  "tomli>=2.0,<3; python_version < '3.11'",
+]
+
+[project.optional-dependencies]
+server = ["fastapi>=0.110,<1", "uvicorn>=0.29,<1"]
+langgraph = ["langchain-core>=0.3,<2", "langgraph>=0.2,<2"]
+dev = [
+  "pytest>=8,<10",
+  "httpx>=0.27,<1",
+  "fastapi>=0.110,<1",
+  "uvicorn>=0.29,<1",
+  "ruff==0.16.10",
+  "mypy==2.4.0",
+  "types-PyYAML>=6,<7",
+  "testteeth==0.2.0",
+  "build>=1.2,<2",
+]
+all = ["agentlens[server,langgraph]"]
+
+[project.scripts]
+agentlens = "agentlens.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/fernandogarzaaa/agentlens"
+Changelog = "https://github.com/fernandogarzaaa/agentlens/blob/main/CHANGELOG.md"
+Issues = "https://github.com/fernandogarzaaa/agentlens/issues"
+
+[tool.setuptools.dynamic]
+version = { attr = "agentlens._version.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+agentlens = ["py.typed", "data/*.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: needs network or a local model (deselect with -m 'not slow')"]
+filterwarnings = ["ignore:create_react_agent has been moved"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = ["data", "results"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM"]
+ignore = ["B905", "E501", "SIM117"]
+
+[tool.mypy]
+python_version = "3.10"
+packages = ["agentlens"]
+mypy_path = "src"
+ignore_missing_imports = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+
+[tool.testteeth]
+# Mutation-test the pure core with its fast unit tests (`make mutation`).
+paths = ["src/agentlens/metrics.py", "src/agentlens/trajectory.py", "src/agentlens/cost.py", "src/agentlens/gate.py"]
+test_args = ["tests/test_metrics.py", "tests/test_trajectory.py", "tests/test_cost.py", "tests/test_gate.py", "-q", "-p", "no:cacheprovider"]

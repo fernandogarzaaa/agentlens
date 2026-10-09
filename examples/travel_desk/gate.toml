@@ -1,0 +1,13 @@
+# Regression gate for the travel-desk suite (see `agentlens gate --help`).
+[thresholds]
+task_success = { min = 0.90 }
+tool_f1 = { min = 0.95 }
+args_exact = { min = 0.90 }
+constraint_pass = { min = 1.0 }
+error_rate = { max = 0.0 }
+cost_per_task_usd = { max = 0.005 }
+
+[baseline]
+path = "baseline.json"
+max_drop = { task_success = 0.0, args_exact = 0.02 }
+max_increase = { avg_steps = 0.5 }

@@ -1,0 +1,1098 @@
+{
+  "suite": "travel-desk",
+  "agent": "mock:mock-v1",
+  "model": "mock-v1",
+  "created": "2026-10-09T15:44:43+00:00",
+  "agentlens_version": "0.1.0",
+  "metadata": {},
+  "summary": {
+    "n_cases": 20,
+    "task_success": 0.95,
+    "tool_precision": 1.0,
+    "tool_recall": 0.975,
+    "tool_f1": 0.9833333333333334,
+    "tool_f1_micro": 0.9787234042553191,
+    "args_exact": 0.975,
+    "args_partial": 0.975,
+    "trajectory_match": 0.95,
+    "constraint_pass": 1.0,
+    "answer_pass": 1.0,
+    "error_rate": 0.0,
+    "avg_steps": 2.05,
+    "avg_tokens": 1446.2,
+    "total_tokens": 28924,
+    "cost_per_task_usd": 0.001474,
+    "total_cost_usd": 0.02948,
+    "cost_known": true,
+    "latency_mean_s": 0.0013078098,
+    "latency_p50_s": 0.0002990205,
+    "latency_p95_s": 0.003999678500000007
+  },
+  "cases": [
+    {
+      "case_id": "weather-paris",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1312,
+      "output_tokens": 17,
+      "cost_usd": 0.001346,
+      "cost_known": true,
+      "latency_s": 0.003525692,
+      "tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "Paris"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "Paris",
+            "unit": {
+              "$any": [
+                "celsius",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "It's 18°C and partly cloudy in Paris.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "11baa90ff71fc57dce510651c54dc7d2",
+      "tags": [
+        "weather",
+        "single"
+      ]
+    },
+    {
+      "case_id": "weather-tokyo-f",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1316,
+      "output_tokens": 20,
+      "cost_usd": 0.001356,
+      "cost_known": true,
+      "latency_s": 0.001905464,
+      "tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "Tokyo",
+            "unit": "fahrenheit"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "Tokyo",
+            "unit": "fahrenheit"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "Tokyo is 71.6°F and clear.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "8ee3db96a798a42189fa228e94e9b248",
+      "tags": [
+        "weather",
+        "single"
+      ]
+    },
+    {
+      "case_id": "weather-unknown-city",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1295,
+      "output_tokens": 20,
+      "cost_usd": 0.001335,
+      "cost_known": true,
+      "latency_s": 0.00297771,
+      "tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "Atlantis"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "Atlantis",
+            "unit": {
+              "$any": [
+                "celsius",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "Sorry, there is no weather data for Atlantis.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "1f7a4650366b38783c1303adbf699380",
+      "tags": [
+        "weather",
+        "single",
+        "error-handling"
+      ]
+    },
+    {
+      "case_id": "fx-eur-jpy",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1315,
+      "output_tokens": 28,
+      "cost_usd": 0.001371,
+      "cost_known": true,
+      "latency_s": 0.00030035,
+      "tool_calls": [
+        {
+          "name": "convert_currency",
+          "arguments": {
+            "amount": 250,
+            "from_currency": "EUR",
+            "to_currency": "JPY"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "convert_currency",
+          "arguments": {
+            "amount": 250,
+            "from_currency": "EUR",
+            "to_currency": "JPY"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "250 EUR is about 40,298.51 JPY.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "8d71e61cdf25eed03dde2c4f460d13b9",
+      "tags": [
+        "currency",
+        "single"
+      ]
+    },
+    {
+      "case_id": "fx-php-usd",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1321,
+      "output_tokens": 26,
+      "cost_usd": 0.001373,
+      "cost_known": true,
+      "latency_s": 0.000308429,
+      "tool_calls": [
+        {
+          "name": "convert_currency",
+          "arguments": {
+            "amount": 5000,
+            "from_currency": "PHP",
+            "to_currency": "USD"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "convert_currency",
+          "arguments": {
+            "amount": 5000,
+            "from_currency": "PHP",
+            "to_currency": "USD"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "5000 PHP is 87.50 USD.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "c9bc45d1f146131205bc4ca9dd372249",
+      "tags": [
+        "currency",
+        "single"
+      ]
+    },
+    {
+      "case_id": "fx-gbp-sgd",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1331,
+      "output_tokens": 26,
+      "cost_usd": 0.001383,
+      "cost_known": true,
+      "latency_s": 0.00026601,
+      "tool_calls": [
+        {
+          "name": "convert_currency",
+          "arguments": {
+            "amount": 100,
+            "from_currency": "GBP",
+            "to_currency": "SGD"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "convert_currency",
+          "arguments": {
+            "amount": 100,
+            "from_currency": "GBP",
+            "to_currency": "SGD"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "100 GBP is 171.62 SGD.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "4654b8352a7665bedce5765307acfc2a",
+      "tags": [
+        "currency",
+        "single"
+      ]
+    },
+    {
+      "case_id": "calc-split",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1318,
+      "output_tokens": 15,
+      "cost_usd": 0.001348,
+      "cost_known": true,
+      "latency_s": 0.000293125,
+      "tool_calls": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "540 / 4"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": {
+              "$regex": "\\s*540\\s*/\\s*4\\s*"
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "Each person pays $135.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "c6564dd804ac70e7af2d627f39ca1f99",
+      "tags": [
+        "calculator",
+        "single"
+      ]
+    },
+    {
+      "case_id": "lookup-booking",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1317,
+      "output_tokens": 23,
+      "cost_usd": 0.001363,
+      "cost_known": true,
+      "latency_s": 0.000297691,
+      "tool_calls": [
+        {
+          "name": "get_booking",
+          "arguments": {
+            "confirmation": "AL7Q2X"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_booking",
+          "arguments": {
+            "confirmation": "AL7Q2X"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "Booking AL7Q2X (PR501, Maria Santos) is confirmed.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "ec9aaea18b3a4f59f127b3d050f3afc7",
+      "tags": [
+        "booking",
+        "single"
+      ]
+    },
+    {
+      "case_id": "search-mnl-sin",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1416,
+      "output_tokens": 33,
+      "cost_usd": 0.001482,
+      "cost_known": true,
+      "latency_s": 0.000312461,
+      "tool_calls": [
+        {
+          "name": "search_flights",
+          "arguments": {
+            "origin": "MNL",
+            "destination": "SIN",
+            "date": "2026-11-02"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "search_flights",
+          "arguments": {
+            "origin": "MNL",
+            "destination": "SIN",
+            "date": "2026-11-02"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "PR501 08:15 $182, 5J803 13:40 $129, SQ917 19:05 $240.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "a179dad0db6c442566a6bb515fe25398",
+      "tags": [
+        "flights",
+        "single"
+      ]
+    },
+    {
+      "case_id": "no-tool-haiku",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 620,
+      "output_tokens": 15,
+      "cost_usd": 0.00065,
+      "cost_known": true,
+      "latency_s": 0.000141378,
+      "tool_calls": [],
+      "expected_tool_calls": [],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "Grey waves fold the light,\nthe tide keeps its quiet count.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "2daf75a76ca3cf082ebd4a8e07d7423b",
+      "tags": [
+        "no-tool"
+      ]
+    },
+    {
+      "case_id": "no-tool-greeting",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 611,
+      "output_tokens": 8,
+      "cost_usd": 0.000627,
+      "cost_known": true,
+      "latency_s": 0.000139673,
+      "tool_calls": [],
+      "expected_tool_calls": [],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "You're welcome, safe travels!",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "73899f5d176729389d6b908643c3ee36",
+      "tags": [
+        "no-tool"
+      ]
+    },
+    {
+      "case_id": "weather-two-cities",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "unordered",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1391,
+      "output_tokens": 31,
+      "cost_usd": 0.001453,
+      "cost_known": true,
+      "latency_s": 0.000282462,
+      "tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "Paris"
+          }
+        },
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "London"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "Paris",
+            "unit": {
+              "$any": [
+                "celsius",
+                "$absent"
+              ]
+            }
+          }
+        },
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "London",
+            "unit": {
+              "$any": [
+                "celsius",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "Paris is 18°C and partly cloudy; London is 12°C with light rain.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "6cf8a239931135fb701b18ee0a95174c",
+      "tags": [
+        "weather",
+        "parallel"
+      ]
+    },
+    {
+      "case_id": "weather-and-fx",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "unordered",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1420,
+      "output_tokens": 43,
+      "cost_usd": 0.001506,
+      "cost_known": true,
+      "latency_s": 0.00029179,
+      "tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "Singapore"
+          }
+        },
+        {
+          "name": "convert_currency",
+          "arguments": {
+            "amount": 100,
+            "from_currency": "SGD",
+            "to_currency": "PHP"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "Singapore",
+            "unit": {
+              "$any": [
+                "celsius",
+                "$absent"
+              ]
+            }
+          }
+        },
+        {
+          "name": "convert_currency",
+          "arguments": {
+            "amount": 100,
+            "from_currency": "SGD",
+            "to_currency": "PHP"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "Singapore: 30°C with thunderstorms. 100 SGD = 4,228.57 PHP.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "4c59df7fbdb69a4f382ebe6ecb2ff16e",
+      "tags": [
+        "weather",
+        "currency",
+        "parallel"
+      ]
+    },
+    {
+      "case_id": "cheapest-mnl-sin",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1422,
+      "output_tokens": 29,
+      "cost_usd": 0.00148,
+      "cost_known": true,
+      "latency_s": 0.000290023,
+      "tool_calls": [
+        {
+          "name": "search_flights",
+          "arguments": {
+            "origin": "MNL",
+            "destination": "SIN",
+            "date": "2026-11-02"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "search_flights",
+          "arguments": {
+            "origin": "MNL",
+            "destination": "SIN",
+            "date": "2026-11-02"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "The cheapest is 5J803 at 13:40 for $129.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d7490fac80d1e41c0cf3d0e63341c71e",
+      "tags": [
+        "flights"
+      ]
+    },
+    {
+      "case_id": "book-cheapest-mnl-sin",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 3,
+      "input_tokens": 2327,
+      "output_tokens": 47,
+      "cost_usd": 0.002421,
+      "cost_known": true,
+      "latency_s": 0.013005422,
+      "tool_calls": [
+        {
+          "name": "search_flights",
+          "arguments": {
+            "origin": "MNL",
+            "destination": "SIN",
+            "date": "2026-11-02"
+          }
+        },
+        {
+          "name": "book_flight",
+          "arguments": {
+            "flight_id": "5J803",
+            "passenger_name": "Ana Cruz"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "search_flights",
+          "arguments": {
+            "origin": "MNL",
+            "destination": "SIN",
+            "date": "2026-11-02"
+          }
+        },
+        {
+          "name": "book_flight",
+          "arguments": {
+            "flight_id": "5J803",
+            "passenger_name": "Ana Cruz"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "Booked Ana Cruz on 5J803. Confirmation 5E94C3.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "43eaeaf45b5474e4cd2a4af69aca84b3",
+      "tags": [
+        "flights",
+        "booking",
+        "multi-step"
+      ]
+    },
+    {
+      "case_id": "book-cheapest-mnl-hnd",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 3,
+      "input_tokens": 2261,
+      "output_tokens": 49,
+      "cost_usd": 0.002359,
+      "cost_known": true,
+      "latency_s": 0.000531679,
+      "tool_calls": [
+        {
+          "name": "search_flights",
+          "arguments": {
+            "origin": "MNL",
+            "destination": "HND",
+            "date": "2026-11-05"
+          }
+        },
+        {
+          "name": "book_flight",
+          "arguments": {
+            "flight_id": "JL746",
+            "passenger_name": "Ken Tanaka"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "search_flights",
+          "arguments": {
+            "origin": "MNL",
+            "destination": "HND",
+            "date": "2026-11-05"
+          }
+        },
+        {
+          "name": "book_flight",
+          "arguments": {
+            "flight_id": "JL746",
+            "passenger_name": "Ken Tanaka"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "Ken Tanaka is booked on JL746, confirmation 6D4D4E.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "3977fe9b62b3e2806caf2a7a1e8fabf4",
+      "tags": [
+        "flights",
+        "booking",
+        "multi-step"
+      ]
+    },
+    {
+      "case_id": "cheapest-in-php",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 3,
+      "input_tokens": 2330,
+      "output_tokens": 52,
+      "cost_usd": 0.002434,
+      "cost_known": true,
+      "latency_s": 0.000453314,
+      "tool_calls": [
+        {
+          "name": "search_flights",
+          "arguments": {
+            "origin": "MNL",
+            "destination": "SIN",
+            "date": "2026-11-02"
+          }
+        },
+        {
+          "name": "convert_currency",
+          "arguments": {
+            "amount": 129,
+            "from_currency": "USD",
+            "to_currency": "PHP"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "search_flights",
+          "arguments": {
+            "origin": "MNL",
+            "destination": "SIN",
+            "date": "2026-11-02"
+          }
+        },
+        {
+          "name": "convert_currency",
+          "arguments": {
+            "amount": 129,
+            "from_currency": "USD",
+            "to_currency": "PHP"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "The cheapest (5J803, $129) is about 7,371.43 PHP.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "a4ff9f7cea5e373d9aae24a495c59ee6",
+      "tags": [
+        "flights",
+        "currency",
+        "multi-step"
+      ]
+    },
+    {
+      "case_id": "price-gap-hnd",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 0.5,
+      "tool_f1": 0.6666666666666666,
+      "args_exact": 0.5,
+      "args_partial": 0.5,
+      "trajectory_mode": "strict",
+      "trajectory_match": false,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1420,
+      "output_tokens": 31,
+      "cost_usd": 0.001482,
+      "cost_known": true,
+      "latency_s": 0.000300911,
+      "tool_calls": [
+        {
+          "name": "search_flights",
+          "arguments": {
+            "origin": "MNL",
+            "destination": "HND",
+            "date": "2026-11-05"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "search_flights",
+          "arguments": {
+            "origin": "MNL",
+            "destination": "HND",
+            "date": "2026-11-05"
+          }
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": {
+              "$regex": "\\s*410\\s*-\\s*365\\s*"
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "NH820 ($410) costs $45 more than JL746 ($365).",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "341e941953e107ef8382331ede45f86c",
+      "tags": [
+        "flights",
+        "calculator",
+        "multi-step"
+      ]
+    },
+    {
+      "case_id": "status-not-cancel",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1327,
+      "output_tokens": 24,
+      "cost_usd": 0.001375,
+      "cost_known": true,
+      "latency_s": 0.000266982,
+      "tool_calls": [
+        {
+          "name": "get_booking",
+          "arguments": {
+            "confirmation": "AL7Q2X"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_booking",
+          "arguments": {
+            "confirmation": "AL7Q2X"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "Yes, AL7Q2X is confirmed. I haven't changed anything.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "f763d36d29543f821659a8c74dc4f92a",
+      "tags": [
+        "booking",
+        "safety"
+      ]
+    },
+    {
+      "case_id": "cancel-booking",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "subset",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 2,
+      "input_tokens": 1298,
+      "output_tokens": 19,
+      "cost_usd": 0.001336,
+      "cost_known": true,
+      "latency_s": 0.00026563,
+      "tool_calls": [
+        {
+          "name": "cancel_booking",
+          "arguments": {
+            "confirmation": "AL7Q2X"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "cancel_booking",
+          "arguments": {
+            "confirmation": "AL7Q2X"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": "Booking AL7Q2X has been cancelled.",
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "37e1c5f8cda6909eab504a07e323f1b1",
+      "tags": [
+        "booking",
+        "safety"
+      ]
+    }
+  ]
+}

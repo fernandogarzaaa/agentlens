@@ -1,0 +1,181 @@
+# Mock model 'v1' for the travel-desk suite: deterministic scripted replies (no API key needed).
+# It gets 19/20 right; on price-gap-hnd it does the arithmetic in its head instead of calling the calculator.
+rules:
+- match: weather in Paris right now
+  steps:
+  - tool_calls:
+    - name: get_weather
+      arguments:
+        city: Paris
+  - content: It's 18°C and partly cloudy in Paris.
+- match: Tokyo in Fahrenheit
+  steps:
+  - tool_calls:
+    - name: get_weather
+      arguments:
+        city: Tokyo
+        unit: fahrenheit
+  - content: Tokyo is 71.6°F and clear.
+- match: Atlantis
+  steps:
+  - tool_calls:
+    - name: get_weather
+      arguments:
+        city: Atlantis
+  - content: Sorry, there is no weather data for Atlantis.
+- match: 250 EUR
+  steps:
+  - tool_calls:
+    - name: convert_currency
+      arguments:
+        amount: 250
+        from_currency: EUR
+        to_currency: JPY
+  - content: 250 EUR is about 40,298.51 JPY.
+- match: 5000 Philippine pesos
+  steps:
+  - tool_calls:
+    - name: convert_currency
+      arguments:
+        amount: 5000
+        from_currency: PHP
+        to_currency: USD
+  - content: 5000 PHP is 87.50 USD.
+- match: 100 pounds sterling
+  steps:
+  - tool_calls:
+    - name: convert_currency
+      arguments:
+        amount: 100
+        from_currency: GBP
+        to_currency: SGD
+  - content: 100 GBP is 171.62 SGD.
+- match: 540 dollar dinner
+  steps:
+  - tool_calls:
+    - name: calculator
+      arguments:
+        expression: 540 / 4
+  - content: Each person pays $135.
+- match: status of booking AL7Q2X
+  steps:
+  - tool_calls:
+    - name: get_booking
+      arguments:
+        confirmation: AL7Q2X
+  - content: Booking AL7Q2X (PR501, Maria Santos) is confirmed.
+- match: List the flights from Manila to Singapore
+  steps:
+  - tool_calls:
+    - name: search_flights
+      arguments:
+        origin: MNL
+        destination: SIN
+        date: '2026-11-02'
+  - content: PR501 08:15 $182, 5J803 13:40 $129, SQ917 19:05 $240.
+- match: poem about the sea
+  steps:
+  - content: 'Grey waves fold the light,
+
+      the tide keeps its quiet count.'
+- match: that's all for today
+  steps:
+  - content: You're welcome, safe travels!
+- match: Paris and London
+  steps:
+  - tool_calls:
+    - name: get_weather
+      arguments:
+        city: Paris
+    - name: get_weather
+      arguments:
+        city: London
+  - content: Paris is 18°C and partly cloudy; London is 12°C with light rain.
+- match: flying to Singapore
+  steps:
+  - tool_calls:
+    - name: get_weather
+      arguments:
+        city: Singapore
+    - name: convert_currency
+      arguments:
+        amount: 100
+        from_currency: SGD
+        to_currency: PHP
+  - content: 'Singapore: 30°C with thunderstorms. 100 SGD = 4,228.57 PHP.'
+- match: ^What's the cheapest flight from Manila to Singapore
+  steps:
+  - tool_calls:
+    - name: search_flights
+      arguments:
+        origin: MNL
+        destination: SIN
+        date: '2026-11-02'
+  - content: The cheapest is 5J803 at 13:40 for $129.
+- match: Book the cheapest flight from Manila to Singapore
+  steps:
+  - tool_calls:
+    - name: search_flights
+      arguments:
+        origin: MNL
+        destination: SIN
+        date: '2026-11-02'
+  - tool_calls:
+    - name: book_flight
+      arguments:
+        flight_id: 5J803
+        passenger_name: Ana Cruz
+  - content: Booked Ana Cruz on 5J803. Confirmation 5E94C3.
+- match: Ken Tanaka
+  steps:
+  - tool_calls:
+    - name: search_flights
+      arguments:
+        origin: MNL
+        destination: HND
+        date: '2026-11-05'
+  - tool_calls:
+    - name: book_flight
+      arguments:
+        flight_id: JL746
+        passenger_name: Ken Tanaka
+  - content: Ken Tanaka is booked on JL746, confirmation 6D4D4E.
+- match: in Philippine pesos\?$
+  steps:
+  - tool_calls:
+    - name: search_flights
+      arguments:
+        origin: MNL
+        destination: SIN
+        date: '2026-11-02'
+  - tool_calls:
+    - name: convert_currency
+      arguments:
+        amount: 129
+        from_currency: USD
+        to_currency: PHP
+  - content: The cheapest (5J803, $129) is about 7,371.43 PHP.
+- match: priciest Manila to Haneda
+  steps:
+  - tool_calls:
+    - name: search_flights
+      arguments:
+        origin: MNL
+        destination: HND
+        date: '2026-11-05'
+  - content: NH820 ($410) costs $45 more than JL746 ($365).
+- match: still active
+  steps:
+  - tool_calls:
+    - name: get_booking
+      arguments:
+        confirmation: AL7Q2X
+  - content: Yes, AL7Q2X is confirmed. I haven't changed anything.
+- match: Cancel booking AL7Q2X
+  steps:
+  - tool_calls:
+    - name: cancel_booking
+      arguments:
+        confirmation: AL7Q2X
+  - content: Booking AL7Q2X has been cancelled.
+default_content: I can only help with travel questions.
