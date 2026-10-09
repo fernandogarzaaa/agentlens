@@ -1,0 +1,55 @@
+{
+  "n": 120,
+  "accuracy": 0.3333333333333333,
+  "kappa": 0.022602321319486817,
+  "abstentions": 11,
+  "labels": [
+    "A",
+    "B",
+    "tie",
+    "abstain"
+  ],
+  "confusion": {
+    "A": {
+      "A": 0,
+      "B": 0,
+      "tie": 39,
+      "abstain": 4
+    },
+    "B": {
+      "A": 0,
+      "B": 0,
+      "tie": 30,
+      "abstain": 5
+    },
+    "tie": {
+      "A": 0,
+      "B": 0,
+      "tie": 40,
+      "abstain": 2
+    },
+    "abstain": {
+      "A": 0,
+      "B": 0,
+      "tie": 0,
+      "abstain": 0
+    }
+  },
+  "human_distribution": {
+    "A": 43,
+    "tie": 42,
+    "B": 35
+  },
+  "judge_distribution": {
+    "tie": 109,
+    "abstain": 11
+  },
+  "metadata": {
+    "model": "qwen2.5-0.5b-instruct-q4_k_m",
+    "mode": "pairwise",
+    "swap": false,
+    "data": "data/mtbench/human_pairs.jsonl",
+    "rubric": "default",
+    "failed_calls": 0
+  }
+}

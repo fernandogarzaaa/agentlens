@@ -22,3 +22,8 @@ All notable changes to this project are documented here. The format follows
 - CLI: `agentlens run | eval | report | gate | replay | judge | serve | bfcl`.
 - FastAPI trace viewer, LangGraph/LangChain callback adapter, BFCL v4 converter.
 - Measured benchmarks with Qwen2.5-0.5B-Instruct (Q4_K_M, llama.cpp, CPU) in `results/`.
+
+### Fixed
+- `src/agentlens/data/pricing.toml` was matched by the `data/` rule in `.gitignore` and missing from
+  git, so a fresh clone could not load the default pricing table; the rule now only ignores the
+  top-level `data/` folder.

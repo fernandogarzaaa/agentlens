@@ -1,0 +1,2949 @@
+{
+  "suite": "bfcl-v4-multiple",
+  "agent": "qwen0.5b",
+  "model": "qwen2.5-0.5b-instruct-q4_k_m",
+  "created": "2026-10-09T17:49:59+00:00",
+  "agentlens_version": "0.1.0",
+  "metadata": {
+    "scored_from_traces": [
+      "results/traces/bfcl_multiple_qwen0.5b.jsonl"
+    ]
+  },
+  "summary": {
+    "n_cases": 50,
+    "task_success": 0.78,
+    "tool_precision": 0.96,
+    "tool_recall": 0.96,
+    "tool_f1": 0.96,
+    "tool_f1_micro": 0.96,
+    "args_exact": 0.78,
+    "args_partial": 0.8759999999999999,
+    "trajectory_match": 0.96,
+    "constraint_pass": 1.0,
+    "answer_pass": 1.0,
+    "error_rate": 0.0,
+    "avg_steps": 1.0,
+    "avg_tokens": 496.96,
+    "total_tokens": 24848,
+    "cost_per_task_usd": 0.0,
+    "total_cost_usd": 0.0,
+    "cost_known": true,
+    "latency_mean_s": 30.38081153638,
+    "latency_p50_s": 29.3879384265,
+    "latency_p95_s": 39.034079931099996
+  },
+  "cases": [
+    {
+      "case_id": "multiple_0",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 568,
+      "output_tokens": 36,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 35.704870671,
+      "tool_calls": [
+        {
+          "name": "triangle_properties_get",
+          "arguments": {
+            "side1": 5,
+            "side2": 4,
+            "side3": 3
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "triangle_properties_get",
+          "arguments": {
+            "side1": 5,
+            "side2": 4,
+            "side3": 3,
+            "get_area": {
+              "$any": [
+                "$absent",
+                true
+              ]
+            },
+            "get_perimeter": {
+              "$any": [
+                "$absent",
+                true
+              ]
+            },
+            "get_angles": {
+              "$any": [
+                "$absent",
+                true
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "0a55b4991fc40250415b18448c6af9ff",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_1",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 456,
+      "output_tokens": 38,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 30.928592666,
+      "tool_calls": [
+        {
+          "name": "math_triangle_area_heron",
+          "arguments": {
+            "side1": 3,
+            "side2": 4,
+            "side3": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "math_triangle_area_heron",
+          "arguments": {
+            "side1": 3,
+            "side2": 4,
+            "side3": 5
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "1e2f71325ecef270589f192895314424",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_2",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 325,
+      "output_tokens": 22,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 15.670970842,
+      "tool_calls": [
+        {
+          "name": "country_info_capital",
+          "arguments": {
+            "country": "Brazil"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "country_info_capital",
+          "arguments": {
+            "country": "Brazil"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "79f0fe5735df37effb80acacaa24f6b6",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_3",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 425,
+      "output_tokens": 44,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 31.861062322,
+      "tool_calls": [
+        {
+          "name": "EuclideanDistance_calculate",
+          "arguments": {
+            "pointA": [
+              3,
+              4
+            ],
+            "pointB": [
+              1,
+              2
+            ],
+            "rounding": 0
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "EuclideanDistance_calculate",
+          "arguments": {
+            "pointA": [
+              3,
+              4
+            ],
+            "pointB": [
+              1,
+              2
+            ],
+            "rounding": {
+              "$any": [
+                "$absent",
+                0
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "dc83e6aab98e95029fa636fc54b95a14",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_4",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 523,
+      "output_tokens": 40,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 34.494355698,
+      "tool_calls": [
+        {
+          "name": "kinematics_calculate_displacement",
+          "arguments": {
+            "initial_speed": 20,
+            "acceleration": 10,
+            "time": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "kinematics_calculate_displacement",
+          "arguments": {
+            "initial_speed": 20,
+            "acceleration": 10,
+            "time": 5,
+            "rounding": {
+              "$any": [
+                "$absent",
+                2
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "5db2c6ed733ee42b2aec18f350a9097c",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_5",
+      "success": false,
+      "tool_precision": 0.0,
+      "tool_recall": 0.0,
+      "tool_f1": 0.0,
+      "args_exact": 0.0,
+      "args_partial": 0.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": false,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 552,
+      "output_tokens": 50,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 38.612499264,
+      "tool_calls": [
+        {
+          "name": "weather_get_forecast_by_coordinates",
+          "arguments": {
+            "coordinates": [
+              46.603354,
+              1.888334
+            ],
+            "days_ahead": 7
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "weather_get_by_coordinates_date",
+          "arguments": {
+            "coordinates": [
+              46.603354,
+              1.888334
+            ],
+            "date": "2019-12-13"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "6861bf2a1680709b9048d13f85ace0ab",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_6",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 524,
+      "output_tokens": 44,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 32.873210582,
+      "tool_calls": [
+        {
+          "name": "capacitance_calculator_calculate",
+          "arguments": {
+            "A": 10,
+            "d": 0.01,
+            "K": 1.0
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "capacitance_calculator_calculate",
+          "arguments": {
+            "A": 10,
+            "d": 0.01,
+            "K": {
+              "$any": [
+                1.0,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "b00f17d194005174c76bd12cbedb5187",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_7",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 436,
+      "output_tokens": 38,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 33.079208758,
+      "tool_calls": [
+        {
+          "name": "wildlife_population_assess_growth",
+          "arguments": {
+            "species": "deer",
+            "location": "Washington state",
+            "duration": 10
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "wildlife_population_assess_growth",
+          "arguments": {
+            "species": {
+              "$any": [
+                "deer",
+                "Deer"
+              ]
+            },
+            "location": {
+              "$any": [
+                "Washington state",
+                "WA",
+                "Washington"
+              ]
+            },
+            "duration": 10
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "3c95b95e5aaf3ff05a22643e46577a3a",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_8",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 515,
+      "output_tokens": 64,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 41.283422961,
+      "tool_calls": [
+        {
+          "name": "realestate_find_properties",
+          "arguments": {
+            "location": "San Diego",
+            "propertyType": "villa",
+            "bedrooms": 3,
+            "budget": {
+              "min": 300000,
+              "max": 400000
+            }
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "realestate_find_properties",
+          "arguments": {
+            "location": {
+              "$any": [
+                "SD",
+                "San Diego",
+                "San Diego, CA",
+                "CA"
+              ]
+            },
+            "propertyType": "villa",
+            "bedrooms": 3,
+            "budget": {
+              "min": 300000,
+              "max": 400000
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "908008db581ba70d531d6160b42db2cf",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_9",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 391,
+      "output_tokens": 47,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 31.228853623,
+      "tool_calls": [
+        {
+          "name": "calculate_average",
+          "arguments": {
+            "gradeDict": {
+              "math": 90,
+              "science": 75,
+              "history": 82,
+              "music": 89
+            }
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_average",
+          "arguments": {
+            "gradeDict": {
+              "math": 90,
+              "science": 75,
+              "history": 82,
+              "music": 89
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "f097108e7e7fd16ff30e9a50c4504147",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_10",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.5,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 453,
+      "output_tokens": 47,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 32.587200366,
+      "tool_calls": [
+        {
+          "name": "database_modify_columns",
+          "arguments": {
+            "db_name": "personal_data",
+            "table": "employees",
+            "operation": "delete",
+            "columns": [
+              "email",
+              "social_security_number"
+            ]
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "database_modify_columns",
+          "arguments": {
+            "db_name": "employees",
+            "table": "personal_data",
+            "operation": "delete",
+            "columns": {
+              "$any": [
+                [
+                  "email",
+                  "ssn"
+                ],
+                [
+                  "ssn",
+                  "email"
+                ],
+                [
+                  "email",
+                  "social_security_number"
+                ],
+                [
+                  "social_security_number",
+                  "email"
+                ],
+                [
+                  "email",
+                  "social security number"
+                ],
+                [
+                  "social security number",
+                  "email"
+                ]
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "95dea26a10d63ca253a18da03f1c639b",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_11",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 497,
+      "output_tokens": 37,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 36.597581015,
+      "tool_calls": [
+        {
+          "name": "math_roots_quadratic",
+          "arguments": {
+            "a": 5,
+            "b": 20,
+            "c": -25
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "math_roots_quadratic",
+          "arguments": {
+            "a": 5,
+            "b": 20,
+            "c": -25
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "f49deaf473e476309b70074b14ccdda9",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_12",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.8,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 565,
+      "output_tokens": 84,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 52.662270011,
+      "tool_calls": [
+        {
+          "name": "corporate_finance_calculate_YOY_growth_rate",
+          "arguments": {
+            "company_name": "Tech Inc",
+            "year1": 2019,
+            "year1_revenue": 1000000,
+            "year2": 1200000,
+            "year2_revenue": 1200000
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "corporate_finance_calculate_YOY_growth_rate",
+          "arguments": {
+            "company_name": "Tech Inc",
+            "year1": 2019,
+            "year1_revenue": 1000000,
+            "year2": 2020,
+            "year2_revenue": 1200000
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "f46a41aae1e9b2cad6f6a8150c3a158e",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_13",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.6666666666666666,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 387,
+      "output_tokens": 44,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 28.576757822,
+      "tool_calls": [
+        {
+          "name": "corporate_finance_revenue_forecast",
+          "arguments": {
+            "company": "company XYZ",
+            "product": "product A",
+            "sales_units_increase_percentage": 10
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "corporate_finance_revenue_forecast",
+          "arguments": {
+            "company": "XYZ",
+            "product": {
+              "$any": [
+                "A",
+                "Product A"
+              ]
+            },
+            "sales_units_increase_percentage": 10
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "b412fc6d1e102a2a5d8922e71c13896b",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_14",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 585,
+      "output_tokens": 44,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 38.448334381,
+      "tool_calls": [
+        {
+          "name": "finance_property_depreciation",
+          "arguments": {
+            "initial_cost": 200000,
+            "depreciation_rate": 3,
+            "years": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "finance_property_depreciation",
+          "arguments": {
+            "initial_cost": 200000,
+            "depreciation_rate": 3,
+            "years": 5,
+            "monthly": {
+              "$any": [
+                false,
+                true,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "752cebdc71ce7865a539e5adb3a2b81d",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_15",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 488,
+      "output_tokens": 59,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 37.466417466,
+      "tool_calls": [
+        {
+          "name": "solarFarm_potential",
+          "arguments": {
+            "coordinates": [
+              43.653225,
+              -79.383186
+            ],
+            "panelArea": 80000,
+            "month": "December"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "solarFarm_potential",
+          "arguments": {
+            "coordinates": [
+              43.653225,
+              -79.383186
+            ],
+            "panelArea": 80000,
+            "month": {
+              "$any": [
+                "December",
+                "Dec"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "9cb869a9f70475681bca0d103a0966bf",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_16",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 573,
+      "output_tokens": 43,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 36.14045757,
+      "tool_calls": [
+        {
+          "name": "population_genetics_calculate_ne",
+          "arguments": {
+            "species": "tiger",
+            "generations": 100,
+            "probability": 0.95
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "population_genetics_calculate_ne",
+          "arguments": {
+            "species": {
+              "$any": [
+                "wild tiger",
+                "tiger"
+              ]
+            },
+            "generations": 100,
+            "probability": 0.95
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d5bde46097e5ac7678de09f5af41ce32",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_17",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 517,
+      "output_tokens": 46,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 36.664468827,
+      "tool_calls": [
+        {
+          "name": "currency_conversion_get_rate",
+          "arguments": {
+            "from_currency": "Euro",
+            "to_currency": "Dollar",
+            "date": "2022-01-01"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "currency_conversion_get_rate",
+          "arguments": {
+            "from_currency": {
+              "$any": [
+                "EUR",
+                "Euro"
+              ]
+            },
+            "to_currency": {
+              "$any": [
+                "Dollar",
+                "USD"
+              ]
+            },
+            "date": {
+              "$any": [
+                "2022-01-01",
+                "01/01/2022",
+                "1/1/2022",
+                "Jan.1,2022",
+                "January 1, 2022",
+                "2022-1-1"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "83129ede5a40b9f482ba8cb74a138e34",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_18",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 342,
+      "output_tokens": 28,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 21.706217873,
+      "tool_calls": [
+        {
+          "name": "european_history_battle_details",
+          "arguments": {
+            "battle": "Battle of Stalingrad"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "european_history_battle_details",
+          "arguments": {
+            "battle": {
+              "$any": [
+                "Battle of Stalingrad",
+                "Stalingrad"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "3a0ebb01341748006ba4239493eefbed",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_19",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 462,
+      "output_tokens": 33,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 28.02613043,
+      "tool_calls": [
+        {
+          "name": "religion_history_get_schisms",
+          "arguments": {
+            "religion": "Christianity",
+            "count": 3
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "religion_history_get_schisms",
+          "arguments": {
+            "religion": "Christianity",
+            "count": 3
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "e0ba60d07a5e8b89b7df5867052471e4",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_20",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 454,
+      "output_tokens": 31,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 28.153280026,
+      "tool_calls": [
+        {
+          "name": "sculpture_price_calculate",
+          "arguments": {
+            "material": "marble",
+            "size": 3
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "sculpture_price_calculate",
+          "arguments": {
+            "material": "marble",
+            "size": 3,
+            "complexity": {
+              "$any": [
+                "medium",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "1c70cdc43917c886c6e3a22343408d1c",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_21",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 418,
+      "output_tokens": 29,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 28.386305627,
+      "tool_calls": [
+        {
+          "name": "generate_sound_wave",
+          "arguments": {
+            "frequency": 440,
+            "duration": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "generate_sound_wave",
+          "arguments": {
+            "frequency": 440,
+            "duration": 5,
+            "wave_type": {
+              "$any": [
+                "sine",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "ac3eb953c0d7f1158ef0edb854af38d6",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_22",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 459,
+      "output_tokens": 28,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 30.040854825,
+      "tool_calls": [
+        {
+          "name": "sports_data_basketball_most_points_single_game",
+          "arguments": {
+            "league": "NBA"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "sports_data_basketball_most_points_single_game",
+          "arguments": {
+            "league": "NBA"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "6951403dd70c27eaef53f38ef27eb5ff",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_23",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 552,
+      "output_tokens": 41,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 38.709406603,
+      "tool_calls": [
+        {
+          "name": "basketball_player_stats_get",
+          "arguments": {
+            "player_name": "LeBron James",
+            "stats_fields": [
+              "points",
+              "assists",
+              "minutes"
+            ]
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "basketball_player_stats_get",
+          "arguments": {
+            "player_name": "LeBron James",
+            "stats_fields": {
+              "$any": [
+                [
+                  "points per game",
+                  "assists",
+                  "minutes per game"
+                ],
+                [
+                  "points per game",
+                  "minutes per game",
+                  "assists"
+                ],
+                [
+                  "assists",
+                  "points per game",
+                  "minutes per game"
+                ],
+                [
+                  "assists",
+                  "minutes per game",
+                  "points per game"
+                ],
+                [
+                  "minutes per game",
+                  "points per game",
+                  "assists"
+                ],
+                [
+                  "minutes per game",
+                  "assists",
+                  "points per game"
+                ],
+                [
+                  "points",
+                  "assists",
+                  "minutes"
+                ],
+                [
+                  "points",
+                  "minutes",
+                  "assists"
+                ],
+                [
+                  "assists",
+                  "points",
+                  "minutes"
+                ],
+                [
+                  "assists",
+                  "minutes",
+                  "points"
+                ],
+                [
+                  "minutes",
+                  "points",
+                  "assists"
+                ],
+                [
+                  "minutes",
+                  "assists",
+                  "points"
+                ],
+                [
+                  "points_per_game",
+                  "assists",
+                  "minutes_per_game"
+                ],
+                [
+                  "points_per_game",
+                  "minutes_per_game",
+                  "assists"
+                ],
+                [
+                  "assists",
+                  "points_per_game",
+                  "minutes_per_game"
+                ],
+                [
+                  "assists",
+                  "minutes_per_game",
+                  "points_per_game"
+                ],
+                [
+                  "minutes_per_game",
+                  "points_per_game",
+                  "assists"
+                ],
+                [
+                  "minutes_per_game",
+                  "assists",
+                  "points_per_game"
+                ]
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "db11928f0afa7abe0186899656783b4d",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_24",
+      "success": false,
+      "tool_precision": 0.0,
+      "tool_recall": 0.0,
+      "tool_f1": 0.0,
+      "args_exact": 0.0,
+      "args_partial": 0.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": false,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 408,
+      "output_tokens": 38,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 25.657987629,
+      "tool_calls": [
+        {
+          "name": "chess_club_details_find",
+          "arguments": {
+            "name": "Chess Club",
+            "city": "London",
+            "event": "Chess Championship"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "route_planner_calculate_route",
+          "arguments": {
+            "start": "London",
+            "destination": "Edinburgh",
+            "method": {
+              "$any": [
+                "fastest",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "8c31a19ed1acfbabc6cb6c9559bca746",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_25",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 548,
+      "output_tokens": 43,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 36.941317682,
+      "tool_calls": [
+        {
+          "name": "video_games_store_price",
+          "arguments": {
+            "game_title": "Assassins Creed Valhalla",
+            "platform": "PlayStation",
+            "region": "United States"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "video_games_store_price",
+          "arguments": {
+            "game_title": "Assassins Creed Valhalla",
+            "platform": {
+              "$any": [
+                "PlayStation",
+                "PS"
+              ]
+            },
+            "region": {
+              "$any": [
+                "United States",
+                "US",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "cae48b443e1164625b04382abb99a798",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_26",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.5,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 535,
+      "output_tokens": 41,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 39.299721745,
+      "tool_calls": [
+        {
+          "name": "game_rewards_get",
+          "arguments": {
+            "game": "Fortnite",
+            "platform": " Playstation",
+            "mission": "all",
+            "trophy": "all"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "game_rewards_get",
+          "arguments": {
+            "game": "Fortnite",
+            "platform": {
+              "$any": [
+                "Playstation",
+                "PS"
+              ]
+            },
+            "mission": {
+              "$any": [
+                "$absent"
+              ]
+            },
+            "trophy": {
+              "$any": [
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "123deea60fa8751fe8248c2deb818aa6",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_27",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 390,
+      "output_tokens": 42,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 31.293308569,
+      "tool_calls": [
+        {
+          "name": "maps_shortest_path",
+          "arguments": {
+            "start_location": "Paris, France",
+            "end_location": "Rome, Italy",
+            "mode": "transit"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "maps_shortest_path",
+          "arguments": {
+            "start_location": {
+              "$any": [
+                "Paris, France",
+                "Paris"
+              ]
+            },
+            "end_location": {
+              "$any": [
+                "Rome, Italy",
+                "Rome"
+              ]
+            },
+            "mode": "transit"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "ca25140cb901538ba5202dbbe05632b1",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_28",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 427,
+      "output_tokens": 35,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 27.541704034,
+      "tool_calls": [
+        {
+          "name": "solve_quadratic_equation",
+          "arguments": {
+            "a": 2,
+            "b": 3,
+            "c": -4
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "solve_quadratic_equation",
+          "arguments": {
+            "a": 2,
+            "b": 3,
+            "c": -4
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "45d033a4cb138fb9a61a4a57839fd741",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_29",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 336,
+      "output_tokens": 34,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 23.22450007,
+      "tool_calls": [
+        {
+          "name": "functions_intersect",
+          "arguments": {
+            "function1": "3x+2",
+            "function2": "2x+3"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "functions_intersect",
+          "arguments": {
+            "function1": {
+              "$any": [
+                "3x + 2",
+                "lambda x: 3x + 2"
+              ]
+            },
+            "function2": {
+              "$any": [
+                "2x + 3",
+                "lambda x: 2x + 3"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "2c1942361fced1190c76bffb4b1d061e",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_30",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 414,
+      "output_tokens": 27,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 24.847559396,
+      "tool_calls": [
+        {
+          "name": "rectangle_area",
+          "arguments": {
+            "length": 12,
+            "width": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "rectangle_area",
+          "arguments": {
+            "length": 12,
+            "width": 5
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "5b323a5ef3c83c9ce8aae377ac177516",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_31",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 385,
+      "output_tokens": 29,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 21.682449866,
+      "tool_calls": [
+        {
+          "name": "geometry_rectangle_calculate",
+          "arguments": {
+            "width": 7,
+            "length": 10
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "geometry_rectangle_calculate",
+          "arguments": {
+            "width": 7,
+            "length": 10
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "622111a3f3b68d487fef38cf22541c2f",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_32",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 378,
+      "output_tokens": 30,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 23.625754736,
+      "tool_calls": [
+        {
+          "name": "geometry_calculate_cone_volume",
+          "arguments": {
+            "radius": 4,
+            "height": 7
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "geometry_calculate_cone_volume",
+          "arguments": {
+            "radius": 4,
+            "height": 7,
+            "round_off": {
+              "$any": [
+                "$absent",
+                0
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "a9ad18aa83ec2978d65349f0c960a8f9",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_33",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.6666666666666666,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 381,
+      "output_tokens": 35,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 22.958293574,
+      "tool_calls": [
+        {
+          "name": "calculate_integral",
+          "arguments": {
+            "func": "3x^2",
+            "a": 1,
+            "b": 2
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_integral",
+          "arguments": {
+            "func": {
+              "$any": [
+                "3x**2",
+                "lambda x: 3x**2"
+              ]
+            },
+            "a": 1,
+            "b": 2
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d2e02e05a4568d244af3ab17e6e0fe3a",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_34",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 412,
+      "output_tokens": 31,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 23.13930194,
+      "tool_calls": [
+        {
+          "name": "math_lcm",
+          "arguments": {
+            "num1": 18,
+            "num2": 12
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "math_lcm",
+          "arguments": {
+            "num1": 18,
+            "num2": 12
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "e2f4054b9e01a67414d2d10dd13b9806",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_35",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 415,
+      "output_tokens": 33,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 26.440546004,
+      "tool_calls": [
+        {
+          "name": "calculate_gcd",
+          "arguments": {
+            "num1": 128,
+            "num2": 256
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_gcd",
+          "arguments": {
+            "num1": 128,
+            "num2": 256,
+            "algorithm": {
+              "$any": [
+                "euclidean",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "fd64c9717ecebc2d3371e4984a18f10d",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_36",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 446,
+      "output_tokens": 32,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 26.766374611,
+      "tool_calls": [
+        {
+          "name": "kinematics_calculate_speed_from_rest",
+          "arguments": {
+            "distance": 20,
+            "time": 4
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "kinematics_calculate_speed_from_rest",
+          "arguments": {
+            "distance": 20,
+            "time": 4,
+            "initial_speed": {
+              "$any": [
+                0,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d1d31506b51674e7fee4c0a873cb3022",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_37",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 524,
+      "output_tokens": 30,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 29.04739609,
+      "tool_calls": [
+        {
+          "name": "kinematics_final_velocity",
+          "arguments": {
+            "initial_velocity": 40,
+            "time": 6
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "kinematics_final_velocity",
+          "arguments": {
+            "initial_velocity": 40,
+            "time": 6,
+            "acceleration": {
+              "$any": [
+                -9.81,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "1c0c1e79943ea958a3de1a7634be1db3",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_38",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 428,
+      "output_tokens": 31,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 24.02472221,
+      "tool_calls": [
+        {
+          "name": "library_search_book",
+          "arguments": {
+            "book_name": "The Alchemist",
+            "city": "New York"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "library_search_book",
+          "arguments": {
+            "book_name": "The Alchemist",
+            "city": {
+              "$any": [
+                "New York",
+                "New York, NY",
+                "New York City",
+                "NYC",
+                "NY"
+              ]
+            },
+            "availability": {
+              "$any": [
+                "$absent",
+                false
+              ]
+            },
+            "genre": {
+              "$any": [
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "489617d143f40d20dd865bfaa2459589",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_39",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.6666666666666666,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 399,
+      "output_tokens": 43,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 25.392670967,
+      "tool_calls": [
+        {
+          "name": "ride_hailing_get_rides",
+          "arguments": {
+            "source": "New York",
+            "destination": "Philadelphia",
+            "max_cost": 500000
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "ride_hailing_get_rides",
+          "arguments": {
+            "source": {
+              "$any": [
+                "New York",
+                "New York, NY",
+                "New York City",
+                "NYC",
+                "NY"
+              ]
+            },
+            "destination": "Philadelphia",
+            "max_cost": 50
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "67e4a80d50f2cc14a6cf33d726225b86",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_40",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 508,
+      "output_tokens": 36,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 30.77834883,
+      "tool_calls": [
+        {
+          "name": "electromagnetism_biot_savart_law",
+          "arguments": {
+            "current": 12,
+            "distance": 8
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "electromagnetism_biot_savart_law",
+          "arguments": {
+            "current": 12,
+            "distance": 8,
+            "mu0": {
+              "$any": [
+                1.256e-06,
+                1.256e-06,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "fa038ef1db061656f786d0cd671c9989",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_41",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 495,
+      "output_tokens": 33,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 27.642794912,
+      "tool_calls": [
+        {
+          "name": "magnetic_field_calculate",
+          "arguments": {
+            "I": 10,
+            "r": 0.01
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "magnetic_field_calculate",
+          "arguments": {
+            "I": 10,
+            "r": 0.01
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "61d1bf1c8177d69e14dedd8fdd721e22",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_42",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 413,
+      "output_tokens": 47,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 28.857286524,
+      "tool_calls": [
+        {
+          "name": "calculate_final_temperature",
+          "arguments": {
+            "quantity1": 2,
+            "temperature1": 300,
+            "quantity2": 3,
+            "temperature2": 400
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_final_temperature",
+          "arguments": {
+            "quantity1": 2,
+            "temperature1": 300,
+            "quantity2": 3,
+            "temperature2": 400
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "c29f07479163ddbbb8ec9dd49fad8540",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_43",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 482,
+      "output_tokens": 50,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 29.728480763,
+      "tool_calls": [
+        {
+          "name": "biological_calc_energy",
+          "arguments": {
+            "mols": 5,
+            "substance": "C6H12O6",
+            "joules_per_mol": 2800
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "biological_calc_energy",
+          "arguments": {
+            "mols": 5,
+            "substance": "C6H12O6",
+            "joules_per_mol": {
+              "$any": [
+                2800,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "58d81e2f40e9dc72db972ddaa5fb5fd1",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_44",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 476,
+      "output_tokens": 34,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 28.706125594,
+      "tool_calls": [
+        {
+          "name": "calculate_weight_in_space",
+          "arguments": {
+            "weight_earth_kg": 70,
+            "planet": "Mars"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_weight_in_space",
+          "arguments": {
+            "weight_earth_kg": 70,
+            "planet": "Mars"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "dcc22464cfa0803afdb54c1828dc9c57",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_45",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.5,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 329,
+      "output_tokens": 33,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 17.529092491,
+      "tool_calls": [
+        {
+          "name": "geology_get_era",
+          "arguments": {
+            "era_name": "Ice age",
+            "calculate_years_ago": false
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "geology_get_era",
+          "arguments": {
+            "era_name": "Ice age",
+            "calculate_years_ago": true
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "5f490b6f7ef3abe33c302a82f27b3bb9",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_46",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 440,
+      "output_tokens": 32,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 28.598867444,
+      "tool_calls": [
+        {
+          "name": "sort_list",
+          "arguments": {
+            "elements": [
+              "Sam",
+              "Alice",
+              "Jack"
+            ],
+            "order": "asc"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "sort_list",
+          "arguments": {
+            "elements": [
+              "Sam",
+              "Alice",
+              "Jack"
+            ],
+            "order": {
+              "$any": [
+                "asc",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "afeb97aa522bb0ee0b9154f8f6b23e5c",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_47",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 447,
+      "output_tokens": 50,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 31.743463576,
+      "tool_calls": [
+        {
+          "name": "cosine_similarity_calculate",
+          "arguments": {
+            "vector1": [
+              3,
+              2,
+              1
+            ],
+            "vector2": [
+              1,
+              2,
+              3
+            ],
+            "rounding": 0
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "cosine_similarity_calculate",
+          "arguments": {
+            "vector1": [
+              3,
+              2,
+              1
+            ],
+            "vector2": [
+              1,
+              2,
+              3
+            ],
+            "rounding": {
+              "$any": [
+                "$absent",
+                0
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "0420a90cfb49a8ec5bce2c0ae686b46d",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_48",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.5,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 404,
+      "output_tokens": 48,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 26.895800141,
+      "tool_calls": [
+        {
+          "name": "library_find_nearby",
+          "arguments": {
+            "location": "New York City, NY",
+            "preferences": [
+              "Pet-friendly",
+              "Disabled Access",
+              "24 hours",
+              "Cafe Inside"
+            ]
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "library_find_nearby",
+          "arguments": {
+            "location": {
+              "$any": [
+                "New York City",
+                "NYC",
+                "New York City, NY"
+              ]
+            },
+            "preferences": {
+              "$any": [
+                [
+                  "Pet-friendly",
+                  "Disabled Access"
+                ],
+                [
+                  "Disabled Access",
+                  "Pet-friendly"
+                ]
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "249f52f2da8c48001fcc6c7cfd538f22",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    },
+    {
+      "case_id": "multiple_49",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 583,
+      "output_tokens": 44,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 36.773977192,
+      "tool_calls": [
+        {
+          "name": "calc_Compound_Interest",
+          "arguments": {
+            "principle_amount": 1500,
+            "duration": 2,
+            "annual_rate": 2.5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calc_Compound_Interest",
+          "arguments": {
+            "principle_amount": 1500,
+            "duration": 2,
+            "annual_rate": 2.5,
+            "compound_freq": {
+              "$any": [
+                "$absent",
+                1
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "a4699e19991d70236a10f8aedf54aa0f",
+      "tags": [
+        "bfcl:multiple"
+      ]
+    }
+  ]
+}

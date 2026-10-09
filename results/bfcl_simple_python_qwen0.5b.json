@@ -1,0 +1,5459 @@
+{
+  "suite": "bfcl-v4-simple_python",
+  "agent": "qwen0.5b",
+  "model": "qwen2.5-0.5b-instruct-q4_k_m",
+  "created": "2026-10-09T17:48:04+00:00",
+  "agentlens_version": "0.1.0",
+  "metadata": {
+    "scored_from_traces": [
+      "results/traces/bfcl_simple_python_qwen0.5b.jsonl"
+    ]
+  },
+  "summary": {
+    "n_cases": 100,
+    "task_success": 0.82,
+    "tool_precision": 1.0,
+    "tool_recall": 1.0,
+    "tool_f1": 1.0,
+    "tool_f1_micro": 1.0,
+    "args_exact": 0.82,
+    "args_partial": 0.9255,
+    "trajectory_match": 1.0,
+    "constraint_pass": 1.0,
+    "answer_pass": 1.0,
+    "error_rate": 0.0,
+    "avg_steps": 1.0,
+    "avg_tokens": 306.32,
+    "total_tokens": 30632,
+    "cost_per_task_usd": 0.0,
+    "total_cost_usd": 0.0,
+    "cost_known": false,
+    "latency_mean_s": 17.14457808698,
+    "latency_p50_s": 17.444347245499998,
+    "latency_p95_s": 25.1197719207
+  },
+  "cases": [
+    {
+      "case_id": "simple_python_0",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 254,
+      "output_tokens": 28,
+      "cost_usd": 0.0,
+      "cost_known": false,
+      "latency_s": 15.584501095,
+      "tool_calls": [
+        {
+          "name": "calculate_triangle_area",
+          "arguments": {
+            "base": 10,
+            "height": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_triangle_area",
+          "arguments": {
+            "base": 10,
+            "height": 5,
+            "unit": {
+              "$any": [
+                "units",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "6036f8bbcc673009b4ee154da89b332e",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_1",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 191,
+      "output_tokens": 21,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 11.559478975,
+      "tool_calls": [
+        {
+          "name": "math_factorial",
+          "arguments": {
+            "number": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "math_factorial",
+          "arguments": {
+            "number": 5
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "6754a88b7982aa0078d4d50ac0aafde0",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_2",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 278,
+      "output_tokens": 28,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 9.324532115,
+      "tool_calls": [
+        {
+          "name": "math_hypot",
+          "arguments": {
+            "x": 4,
+            "y": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "math_hypot",
+          "arguments": {
+            "x": 4,
+            "y": 5,
+            "z": {
+              "$any": [
+                "$absent",
+                0
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "52fbe3bb125a313774ef7ee895ea6402",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_3",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 252,
+      "output_tokens": 36,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 13.224805823,
+      "tool_calls": [
+        {
+          "name": "algebra_quadratic_roots",
+          "arguments": {
+            "a": 1,
+            "b": -3,
+            "c": 2
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "algebra_quadratic_roots",
+          "arguments": {
+            "a": 1,
+            "b": -3,
+            "c": 2
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "a0ee1d710e0ec5377949dc5a889568a9",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_4",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 241,
+      "output_tokens": 35,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 10.627789799,
+      "tool_calls": [
+        {
+          "name": "solve_quadratic_equation",
+          "arguments": {
+            "a": 2,
+            "b": 6,
+            "c": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "solve_quadratic_equation",
+          "arguments": {
+            "a": 2,
+            "b": 6,
+            "c": 5
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "77994170a8a4d2992bd708f7752b70a1",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_5",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.75,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 342,
+      "output_tokens": 34,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 14.716486024,
+      "tool_calls": [
+        {
+          "name": "solve_quadratic",
+          "arguments": {
+            "a": 3,
+            "b": -11,
+            "c": -4
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "solve_quadratic",
+          "arguments": {
+            "a": 3,
+            "b": -11,
+            "c": -4,
+            "root_type": "all"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "634da0d054f5294a49d51db82518fd4d",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_6",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 242,
+      "output_tokens": 33,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 11.538119991,
+      "tool_calls": [
+        {
+          "name": "solve_quadratic",
+          "arguments": {
+            "a": 2,
+            "b": 5,
+            "c": 3
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "solve_quadratic",
+          "arguments": {
+            "a": 2,
+            "b": 5,
+            "c": 3
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "195d3d933adc19f4db36a627c9155e69",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_7",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.5,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 230,
+      "output_tokens": 29,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 11.323243851,
+      "tool_calls": [
+        {
+          "name": "calculate_circumference",
+          "arguments": {
+            "radius": 4,
+            "unit": "cm"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_circumference",
+          "arguments": {
+            "radius": 4,
+            "unit": {
+              "$any": [
+                "inches",
+                "in"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d3223345c3b96036498908a5ccf0e6d3",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_8",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 224,
+      "output_tokens": 29,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 10.522658261,
+      "tool_calls": [
+        {
+          "name": "geometry_area_circle",
+          "arguments": {
+            "radius": 10,
+            "units": "meters"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "geometry_area_circle",
+          "arguments": {
+            "radius": 10,
+            "units": {
+              "$any": [
+                "meters",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "4b897f536832d3e867a9f1abba9d3904",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_9",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 225,
+      "output_tokens": 29,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 10.632428669,
+      "tool_calls": [
+        {
+          "name": "geometry_calculate_area_circle",
+          "arguments": {
+            "radius": 5,
+            "unit": "units"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "geometry_calculate_area_circle",
+          "arguments": {
+            "radius": 5,
+            "unit": {
+              "$any": [
+                "units",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "8669e17ae4b3c9fe3c22ba7cd7e7e473",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_10",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 271,
+      "output_tokens": 27,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 11.488050844,
+      "tool_calls": [
+        {
+          "name": "calculate_area",
+          "arguments": {
+            "base": 6,
+            "height": 10
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_area",
+          "arguments": {
+            "base": 6,
+            "height": 10,
+            "unit": {
+              "$any": [
+                "cm",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "e5a7d3b78d8defb93cd550aaf4f8b8fe",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_11",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 231,
+      "output_tokens": 28,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 8.536361113,
+      "tool_calls": [
+        {
+          "name": "calculate_triangle_area",
+          "arguments": {
+            "base": 10,
+            "height": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_triangle_area",
+          "arguments": {
+            "base": 10,
+            "height": 5
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "36b285a7cfada09a4c163d032305d4af",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_12",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 218,
+      "output_tokens": 29,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 10.021740639,
+      "tool_calls": [
+        {
+          "name": "geometry_circumference",
+          "arguments": {
+            "radius": 3,
+            "units": "cm"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "geometry_circumference",
+          "arguments": {
+            "radius": 3,
+            "units": {
+              "$any": [
+                "cm",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d27f9b456b709c2c348f6e81405a5a9d",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_13",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.6666666666666666,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 285,
+      "output_tokens": 42,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 11.786277291,
+      "tool_calls": [
+        {
+          "name": "calculate_area_under_curve",
+          "arguments": {
+            "function": "x^2",
+            "interval": [
+              1,
+              3
+            ],
+            "method": "trapezoidal"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_area_under_curve",
+          "arguments": {
+            "function": {
+              "$any": [
+                "x**2",
+                "lambda x: x**2",
+                "y=x**2"
+              ]
+            },
+            "interval": [
+              1.0,
+              3.0
+            ],
+            "method": {
+              "$any": [
+                "$absent",
+                "trapezoidal"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "fe8ee7d1cedee2c48d46b8a90c6a209d",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_14",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.5,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 228,
+      "output_tokens": 40,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 10.176531514,
+      "tool_calls": [
+        {
+          "name": "calculate_derivative",
+          "arguments": {
+            "function": "3x^2 + 2x - 1",
+            "x_value": 0.0
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_derivative",
+          "arguments": {
+            "function": {
+              "$any": [
+                "3x**2 + 2x - 1",
+                "lambda x: 3x**2 + 2x - 1"
+              ]
+            },
+            "x_value": {
+              "$any": [
+                "$absent",
+                0.0
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "528b4f984fbfbb07dc765743ea028e14",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_15",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.75,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 322,
+      "output_tokens": 43,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 13.727439425,
+      "tool_calls": [
+        {
+          "name": "integrate",
+          "arguments": {
+            "function": "x^3",
+            "start_x": -2,
+            "end_x": 3,
+            "method": "simpson"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "integrate",
+          "arguments": {
+            "function": {
+              "$any": [
+                "x**3",
+                "lambda x: x**3"
+              ]
+            },
+            "start_x": -2,
+            "end_x": 3,
+            "method": "simpson"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "ac1dbe83dd468670eaefcae9ed70a4fc",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_16",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.6666666666666666,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 263,
+      "output_tokens": 30,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 11.166643171,
+      "tool_calls": [
+        {
+          "name": "calculus_derivative",
+          "arguments": {
+            "function": "2x^2",
+            "value": 1
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculus_derivative",
+          "arguments": {
+            "function": {
+              "$any": [
+                "2x**2",
+                "lambda x: 2x**2"
+              ]
+            },
+            "value": 1,
+            "function_variable": {
+              "$any": [
+                "x",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "dfee3d7337f32fd296e23fc69189d7b1",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_17",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.5,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 221,
+      "output_tokens": 28,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 11.204899411,
+      "tool_calls": [
+        {
+          "name": "get_prime_factors",
+          "arguments": {
+            "number": 450,
+            "formatted": false
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_prime_factors",
+          "arguments": {
+            "number": 450,
+            "formatted": {
+              "$any": [
+                true,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "3f2a9ac3b6503fa6feec6a105b34483b",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_18",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 194,
+      "output_tokens": 27,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 7.674398364,
+      "tool_calls": [
+        {
+          "name": "number_analysis_prime_factors",
+          "arguments": {
+            "number": 123456
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "number_analysis_prime_factors",
+          "arguments": {
+            "number": 123456
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "c5835c00be13a7297866af5f227824ac",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_19",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 217,
+      "output_tokens": 31,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 11.475420784,
+      "tool_calls": [
+        {
+          "name": "math_gcd",
+          "arguments": {
+            "num1": 40,
+            "num2": 50
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "math_gcd",
+          "arguments": {
+            "num1": 40,
+            "num2": 50
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "c4760837cc17e7d70e8c9d5641e3cd2e",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_20",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 213,
+      "output_tokens": 31,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 9.175221132,
+      "tool_calls": [
+        {
+          "name": "math_hcf",
+          "arguments": {
+            "number1": 36,
+            "number2": 24
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "math_hcf",
+          "arguments": {
+            "number1": 36,
+            "number2": 24
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "e9fb429d8bfd6dada39f751f888573e6",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_21",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 227,
+      "output_tokens": 33,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 10.721043719,
+      "tool_calls": [
+        {
+          "name": "number_theory_gcd",
+          "arguments": {
+            "number1": 36,
+            "number2": 48
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "number_theory_gcd",
+          "arguments": {
+            "number1": 36,
+            "number2": 48
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "91518191052962209ae1df71fb8dbeb2",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_22",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 225,
+      "output_tokens": 31,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 7.979099619,
+      "tool_calls": [
+        {
+          "name": "math_gcd",
+          "arguments": {
+            "num1": 12,
+            "num2": 15
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "math_gcd",
+          "arguments": {
+            "num1": 12,
+            "num2": 15
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "8acb0bfc5484d58aa63e1787d99523f5",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_23",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 260,
+      "output_tokens": 29,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 11.121536356,
+      "tool_calls": [
+        {
+          "name": "prime_factorize",
+          "arguments": {
+            "number": 60,
+            "return_type": "dictionary"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "prime_factorize",
+          "arguments": {
+            "number": 60,
+            "return_type": "dictionary"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "852652994171c4f824ab70ec239f6566",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_24",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 216,
+      "output_tokens": 31,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 8.549579537,
+      "tool_calls": [
+        {
+          "name": "math_gcd",
+          "arguments": {
+            "num1": 12,
+            "num2": 18
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "math_gcd",
+          "arguments": {
+            "num1": 12,
+            "num2": 18
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "bbb14c68bab9f6e02f55c675d82bcccf",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_25",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 292,
+      "output_tokens": 32,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 13.208247747,
+      "tool_calls": [
+        {
+          "name": "calculate_final_velocity",
+          "arguments": {
+            "height": 150,
+            "gravity": 9.81
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_final_velocity",
+          "arguments": {
+            "height": 150,
+            "initial_velocity": {
+              "$any": [
+                0,
+                "$absent"
+              ]
+            },
+            "gravity": {
+              "$any": [
+                9.81,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "95c9b8429c3993c60c85c7ba2c62eca9",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_26",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 271,
+      "output_tokens": 34,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 13.239295306,
+      "tool_calls": [
+        {
+          "name": "calculate_velocity",
+          "arguments": {
+            "distance": 50,
+            "duration": 2,
+            "unit": "km/h"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_velocity",
+          "arguments": {
+            "distance": 50,
+            "duration": 2,
+            "unit": {
+              "$any": [
+                "$absent",
+                "km/h"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "fe20a395cef7d527614204c82665907f",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_27",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 288,
+      "output_tokens": 35,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 15.671634032,
+      "tool_calls": [
+        {
+          "name": "final_velocity",
+          "arguments": {
+            "initial_velocity": 10,
+            "acceleration": 2,
+            "time": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "final_velocity",
+          "arguments": {
+            "initial_velocity": 10,
+            "acceleration": 2,
+            "time": 5
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "c35798f142ad69e1ac67ffdaf4a51a1c",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_28",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 281,
+      "output_tokens": 38,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.189271663,
+      "tool_calls": [
+        {
+          "name": "calculate_displacement",
+          "arguments": {
+            "initial_velocity": 10,
+            "time": 5,
+            "acceleration": 9.8
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_displacement",
+          "arguments": {
+            "initial_velocity": 10,
+            "time": 5,
+            "acceleration": 9.8
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "4011eea18a3a10db3c56bd1a5c879252",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_29",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 304,
+      "output_tokens": 21,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 15.656046506,
+      "tool_calls": [
+        {
+          "name": "calculate_final_speed",
+          "arguments": {
+            "time": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_final_speed",
+          "arguments": {
+            "initial_speed": {
+              "$any": [
+                0,
+                "$absent"
+              ]
+            },
+            "time": 5,
+            "gravity": {
+              "$any": [
+                -9.81,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "496c70a369e3ec2eaded197d6f64f3cc",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_30",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 284,
+      "output_tokens": 33,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 14.723965491,
+      "tool_calls": [
+        {
+          "name": "kinematics_final_velocity_from_distance",
+          "arguments": {
+            "acceleration": 4,
+            "distance": 300
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "kinematics_final_velocity_from_distance",
+          "arguments": {
+            "acceleration": 4,
+            "distance": 300,
+            "initial_velocity": {
+              "$any": [
+                "$absent",
+                0.0
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d58fd5135ce2dff059b3af80ed37b7ff",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_31",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 278,
+      "output_tokens": 37,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 18.495669106,
+      "tool_calls": [
+        {
+          "name": "calculate_final_velocity",
+          "arguments": {
+            "initial_velocity": 0,
+            "acceleration": 9.8,
+            "time": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_final_velocity",
+          "arguments": {
+            "initial_velocity": 0,
+            "acceleration": 9.8,
+            "time": 5
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d0c61501df7dba05d5c4346ca28ff30b",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_32",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 261,
+      "output_tokens": 30,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 12.084177607,
+      "tool_calls": [
+        {
+          "name": "calculate_final_speed",
+          "arguments": {
+            "initial_velocity": 0,
+            "height": 100
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_final_speed",
+          "arguments": {
+            "initial_velocity": 0,
+            "height": 100,
+            "gravity": {
+              "$any": [
+                9.8,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "84b0eeda5001eb929d34c25ef29b7e60",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_33",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 267,
+      "output_tokens": 39,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.798767648,
+      "tool_calls": [
+        {
+          "name": "get_directions",
+          "arguments": {
+            "start_location": "Sydney",
+            "end_location": "Melbourne",
+            "route_type": "fastest"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_directions",
+          "arguments": {
+            "start_location": "Sydney",
+            "end_location": "Melbourne",
+            "route_type": {
+              "$any": [
+                "fastest",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "881129e69df4d30e0060a9d33546d72a",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_34",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 307,
+      "output_tokens": 46,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 17.678265132,
+      "tool_calls": [
+        {
+          "name": "travel_itinerary_generator",
+          "arguments": {
+            "destination": "Tokyo",
+            "days": 7,
+            "daily_budget": 100,
+            "exploration_type": "nature"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "travel_itinerary_generator",
+          "arguments": {
+            "destination": "Tokyo",
+            "days": 7,
+            "daily_budget": 100,
+            "exploration_type": "nature"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "b87c46ff0941c927288a2d339ce6cbb5",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_35",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.5,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 284,
+      "output_tokens": 37,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.262763387,
+      "tool_calls": [
+        {
+          "name": "vegan_restaurant_find_nearby",
+          "arguments": {
+            "location": "New York, NY",
+            "operating_hours": 11
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "vegan_restaurant_find_nearby",
+          "arguments": {
+            "location": "New York, NY",
+            "operating_hours": 23
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "a03e1070920f4da4e2aa4bec4a8f8c6b",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_36",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 265,
+      "output_tokens": 40,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 21.349100804,
+      "tool_calls": [
+        {
+          "name": "get_shortest_driving_distance",
+          "arguments": {
+            "origin": "New York City",
+            "destination": "Washington D.C.",
+            "unit": "km"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_shortest_driving_distance",
+          "arguments": {
+            "origin": "New York City",
+            "destination": "Washington D.C.",
+            "unit": {
+              "$any": [
+                "km",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "667b498eae703e6c12df582bb00d73bc",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_37",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 295,
+      "output_tokens": 44,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 14.704797582,
+      "tool_calls": [
+        {
+          "name": "route_estimate_time",
+          "arguments": {
+            "start_location": "San Francisco",
+            "end_location": "Los Angeles",
+            "stops": [
+              "Santa Barbara",
+              "Monterey"
+            ]
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "route_estimate_time",
+          "arguments": {
+            "start_location": "San Francisco",
+            "end_location": "Los Angeles",
+            "stops": {
+              "$any": [
+                [
+                  "Santa Barbara",
+                  "Monterey"
+                ],
+                [
+                  "Monterey",
+                  "Santa Barbara"
+                ]
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "c00cfb106e0b83d1b16eeb3d26c940d5",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_38",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 310,
+      "output_tokens": 48,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 16.567799074,
+      "tool_calls": [
+        {
+          "name": "calculate_electrostatic_potential",
+          "arguments": {
+            "charge1": 1e-09,
+            "charge2": 2e-09,
+            "distance": 0.05
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_electrostatic_potential",
+          "arguments": {
+            "charge1": 1e-09,
+            "charge2": 2e-09,
+            "distance": 0.05,
+            "constant": {
+              "$any": [
+                "$absent",
+                8990000000.0
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "f1d174b66251c67940c0d85870040fb4",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_39",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 278,
+      "output_tokens": 28,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 16.136052138,
+      "tool_calls": [
+        {
+          "name": "calculate_electric_field",
+          "arguments": {
+            "charge": 2,
+            "distance": 3
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_electric_field",
+          "arguments": {
+            "charge": 2,
+            "distance": 3,
+            "permitivity": {
+              "$any": [
+                "$absent",
+                8.854e-12
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "9ea803a09700658abba46c511657acd8",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_40",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 282,
+      "output_tokens": 28,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 14.841261774,
+      "tool_calls": [
+        {
+          "name": "calculate_magnetic_field",
+          "arguments": {
+            "current": 5,
+            "radius": 4
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_magnetic_field",
+          "arguments": {
+            "current": 5,
+            "radius": 4,
+            "permeability": {
+              "$any": [
+                "$absent",
+                125700000000.0
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "70f9ce0ee0b77f0845d009006a2a15b1",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_41",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 319,
+      "output_tokens": 36,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 16.668382851,
+      "tool_calls": [
+        {
+          "name": "electromagnetic_force",
+          "arguments": {
+            "charge1": 5,
+            "charge2": 7,
+            "distance": 3
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "electromagnetic_force",
+          "arguments": {
+            "charge1": 5,
+            "charge2": 7,
+            "distance": 3,
+            "medium_permittivity": {
+              "$any": [
+                "$absent",
+                8.854e-12
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "148e4b5e309be253bb0c889f28c2e4bd",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_42",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.3333333333333333,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 295,
+      "output_tokens": 43,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 18.067432971,
+      "tool_calls": [
+        {
+          "name": "calculate_resonant_frequency",
+          "arguments": {
+            "inductance": 50.0,
+            "capacitance": 100.0
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_resonant_frequency",
+          "arguments": {
+            "inductance": 0.05,
+            "capacitance": 0.0001,
+            "round_off": {
+              "$any": [
+                "$absent",
+                2
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "4cdf5a33805af7d2034e392676162322",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_43",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 297,
+      "output_tokens": 31,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 15.576640204,
+      "tool_calls": [
+        {
+          "name": "calculate_magnetic_field_strength",
+          "arguments": {
+            "current": 20,
+            "distance": 10
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_magnetic_field_strength",
+          "arguments": {
+            "current": 20,
+            "distance": 10,
+            "permeability": {
+              "$any": [
+                "$absent",
+                1.257e-06
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "1dee94d0093c8da21bc06b8005c892f2",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_44",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 266,
+      "output_tokens": 32,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 16.160087763,
+      "tool_calls": [
+        {
+          "name": "calculate_electric_field_strength",
+          "arguments": {
+            "charge": 0.01,
+            "distance": 4
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_electric_field_strength",
+          "arguments": {
+            "charge": 0.01,
+            "distance": 4,
+            "medium": {
+              "$any": [
+                "$absent",
+                "vacuum"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "16191cd861e3a0ac5d30e6cdca29ecc2",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_45",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 298,
+      "output_tokens": 41,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 27.148923884,
+      "tool_calls": [
+        {
+          "name": "thermo_calculate_energy",
+          "arguments": {
+            "mass": 100,
+            "phase_transition": "vaporization",
+            "substance": "water"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "thermo_calculate_energy",
+          "arguments": {
+            "mass": 100,
+            "phase_transition": "vaporization",
+            "substance": {
+              "$any": [
+                "water",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "79e0e1beb341e12359603e4aa3528a90",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_46",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 365,
+      "output_tokens": 57,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 30.771411608,
+      "tool_calls": [
+        {
+          "name": "calculate_final_temperature",
+          "arguments": {
+            "mass1": 20,
+            "temperature1": 30,
+            "mass2": 15,
+            "temperature2": 60,
+            "specific_heat_capacity": 4.2
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_final_temperature",
+          "arguments": {
+            "mass1": 20,
+            "temperature1": 30,
+            "mass2": 15,
+            "temperature2": 60,
+            "specific_heat_capacity": {
+              "$any": [
+                "$absent",
+                4.2
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "1e73ccbf208c38c9edfa8fdfd8d55860",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_47",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 240,
+      "output_tokens": 37,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.837594401,
+      "tool_calls": [
+        {
+          "name": "get_boiling_melting_points",
+          "arguments": {
+            "substance": "water",
+            "sea_level": 5000
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_boiling_melting_points",
+          "arguments": {
+            "substance": "water",
+            "sea_level": 5000
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "1df6e206d00607c515409e3cdc2b163c",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_48",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 259,
+      "output_tokens": 36,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 21.188141372,
+      "tool_calls": [
+        {
+          "name": "calculate_density",
+          "arguments": {
+            "mass": 45,
+            "volume": 15,
+            "unit": "kg/m³"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_density",
+          "arguments": {
+            "mass": 45,
+            "volume": 15,
+            "unit": {
+              "$any": [
+                "$absent",
+                "kg/m³"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "f9202b328b0ccc1aa3856bcc4ab9661e",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_49",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 251,
+      "output_tokens": 31,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 18.216938745,
+      "tool_calls": [
+        {
+          "name": "calc_absolute_pressure",
+          "arguments": {
+            "gauge_pressure": 2,
+            "atm_pressure": 1
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calc_absolute_pressure",
+          "arguments": {
+            "atm_pressure": 1,
+            "gauge_pressure": 2
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "f76870da0d3720815a34cda3d91f6267",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_50",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 348,
+      "output_tokens": 51,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 32.28828319,
+      "tool_calls": [
+        {
+          "name": "entropy_change_calculate",
+          "arguments": {
+            "substance": "ice",
+            "mass": 1,
+            "initial_temperature": 0,
+            "final_temperature": 100,
+            "pressure": 1
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "entropy_change_calculate",
+          "arguments": {
+            "substance": "ice",
+            "mass": 1,
+            "initial_temperature": 0,
+            "final_temperature": 100,
+            "pressure": {
+              "$any": [
+                "$absent",
+                1
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "a57aed15cc2ead5f37998e2f780d1484",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_51",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 299,
+      "output_tokens": 40,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 23.571207329,
+      "tool_calls": [
+        {
+          "name": "calculate_entropy_change",
+          "arguments": {
+            "initial_temp": 300,
+            "final_temp": 400,
+            "heat_capacity": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_entropy_change",
+          "arguments": {
+            "initial_temp": 300,
+            "final_temp": 400,
+            "heat_capacity": 5,
+            "isothermal": {
+              "$any": [
+                "$absent",
+                true
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "c981d2369057b2a046e4a57fc1ac3ce8",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_52",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 267,
+      "output_tokens": 30,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 21.578280216,
+      "tool_calls": [
+        {
+          "name": "calc_heat_capacity",
+          "arguments": {
+            "temp": 298,
+            "volume": 10
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calc_heat_capacity",
+          "arguments": {
+            "temp": 298,
+            "volume": 10,
+            "gas": {
+              "$any": [
+                "air",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "7d72cd106bfdf572b152b0673f34db81",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_53",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 269,
+      "output_tokens": 26,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 17.988765333,
+      "tool_calls": [
+        {
+          "name": "fetch_DNA_sequence",
+          "arguments": {
+            "DNA_id": "DNA123"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "fetch_DNA_sequence",
+          "arguments": {
+            "DNA_id": "DNA123",
+            "format": {
+              "$any": [
+                "$absent",
+                "fasta"
+              ]
+            },
+            "upstream": {
+              "$any": [
+                "$absent",
+                0
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d3e55739d6e422efc8433d7bb44b8f47",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_54",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 229,
+      "output_tokens": 24,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 12.454659607,
+      "tool_calls": [
+        {
+          "name": "get_protein_sequence",
+          "arguments": {
+            "gene": "BRCA1"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_protein_sequence",
+          "arguments": {
+            "gene": "BRCA1",
+            "species": {
+              "$any": [
+                "Homo sapiens",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "9ece295fd30946f5097d0de7dd53eb84",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_55",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 230,
+      "output_tokens": 29,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 12.479412344,
+      "tool_calls": [
+        {
+          "name": "biology_get_cell_info",
+          "arguments": {
+            "cell_type": "human",
+            "detailed": true
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "biology_get_cell_info",
+          "arguments": {
+            "cell_type": "human",
+            "detailed": true
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "31b4bbaed07a5d5f028acd12e15c706a",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_56",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.5,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 231,
+      "output_tokens": 33,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 16.396397679,
+      "tool_calls": [
+        {
+          "name": "cellbio_get_proteins",
+          "arguments": {
+            "cell_compartment": "plasma",
+            "include_description": true
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "cellbio_get_proteins",
+          "arguments": {
+            "cell_compartment": "plasma membrane",
+            "include_description": {
+              "$any": [
+                "$absent",
+                true,
+                false
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "aac5f297cdfd6bf5ea35fa0c5e74a160",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_57",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 300,
+      "output_tokens": 33,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 20.658717904,
+      "tool_calls": [
+        {
+          "name": "calculate_cell_density",
+          "arguments": {
+            "optical_density": 0.6,
+            "dilution": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_cell_density",
+          "arguments": {
+            "optical_density": 0.6,
+            "dilution": 5,
+            "calibration_factor": {
+              "$any": [
+                1000000000.0,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "8497f42c07f20a8183e34524bda4b6be",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_58",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 271,
+      "output_tokens": 43,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.007745942,
+      "tool_calls": [
+        {
+          "name": "cell_biology_function_lookup",
+          "arguments": {
+            "molecule": "ATP synthase",
+            "organelle": "mitochondria",
+            "specific_function": true
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "cell_biology_function_lookup",
+          "arguments": {
+            "molecule": "ATP synthase",
+            "organelle": "mitochondria",
+            "specific_function": true
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d1f9d84071bd14ed89ef2fe0f040a682",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_59",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 232,
+      "output_tokens": 36,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 18.833249505,
+      "tool_calls": [
+        {
+          "name": "calculate_molecular_weight",
+          "arguments": {
+            "compound": "C6H12O6",
+            "to_unit": "g/mol"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_molecular_weight",
+          "arguments": {
+            "compound": "C6H12O6",
+            "to_unit": {
+              "$any": [
+                "grams/mole",
+                "g/mol"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "3adca80888cdb298524c1fb7cdde62bc",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_60",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 268,
+      "output_tokens": 39,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 21.117459966,
+      "tool_calls": [
+        {
+          "name": "mutation_type_find",
+          "arguments": {
+            "snp_id": "rs6034464",
+            "species": "Homo sapiens"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "mutation_type_find",
+          "arguments": {
+            "snp_id": "rs6034464",
+            "species": {
+              "$any": [
+                "Homo sapiens",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "e0be9f2823a5875552e5c3081eb1ed50",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_61",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.6666666666666666,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 294,
+      "output_tokens": 37,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 21.750061767,
+      "tool_calls": [
+        {
+          "name": "diabetes_prediction",
+          "arguments": {
+            "weight": 150,
+            "height": 5,
+            "activity_level": "lightly active"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "diabetes_prediction",
+          "arguments": {
+            "weight": 150,
+            "height": 70,
+            "activity_level": "lightly active"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "fbe7ddf618a1357713bdd5cad1c1a17a",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_62",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 301,
+      "output_tokens": 57,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 24.183830617,
+      "tool_calls": [
+        {
+          "name": "analyze_dna_sequence",
+          "arguments": {
+            "sequence": "AGTCGATCGAACGTACGTACG",
+            "reference_sequence": "AGTCCATCGAACGTACGTACG",
+            "mutation_type": "substitution"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "analyze_dna_sequence",
+          "arguments": {
+            "sequence": "AGTCGATCGAACGTACGTACG",
+            "reference_sequence": "AGTCCATCGAACGTACGTACG",
+            "mutation_type": {
+              "$any": [
+                "substitution",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "a51179aee47d84c6fa0cb8942eb0ad24",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_63",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 255,
+      "output_tokens": 37,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.98219737,
+      "tool_calls": [
+        {
+          "name": "genetics_calculate_similarity",
+          "arguments": {
+            "species1": "human",
+            "species2": "chimp",
+            "format": "percentage"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "genetics_calculate_similarity",
+          "arguments": {
+            "species1": {
+              "$any": [
+                "Human",
+                "human"
+              ]
+            },
+            "species2": {
+              "$any": [
+                "Chimp",
+                "chimp",
+                "Chimpanzee",
+                "chimpanzee"
+              ]
+            },
+            "format": {
+              "$any": [
+                "percentage",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d297f10bda1282c80d2450757e27d578",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_64",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 260,
+      "output_tokens": 32,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.597469632,
+      "tool_calls": [
+        {
+          "name": "calculate_genotype_frequency",
+          "arguments": {
+            "allele_frequency": 0.3,
+            "genotype": "AA"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_genotype_frequency",
+          "arguments": {
+            "allele_frequency": 0.3,
+            "genotype": "AA"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "12afd8eab1aff08baa83c0252fa87543",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_65",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.5,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 300,
+      "output_tokens": 49,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 18.861129197,
+      "tool_calls": [
+        {
+          "name": "calculate_density",
+          "arguments": {
+            "country": "Brazil",
+            "year": "2022",
+            "population": 213,
+            "land_area": 850000
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_density",
+          "arguments": {
+            "country": "Brazil",
+            "year": "2022",
+            "population": 213000000,
+            "land_area": 8500000
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d37ec6a8cbffb4836c53d152a0b458ed",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_66",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 252,
+      "output_tokens": 35,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 15.367290907,
+      "tool_calls": [
+        {
+          "name": "ecology_data_precipitation_stats",
+          "arguments": {
+            "location": "Amazon rainforest",
+            "time_frame": "six_months"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "ecology_data_precipitation_stats",
+          "arguments": {
+            "location": "Amazon rainforest",
+            "time_frame": "six_months"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "c33bc883547f64a51d4fb2880ed2ebce",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_67",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 250,
+      "output_tokens": 34,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 14.433438868,
+      "tool_calls": [
+        {
+          "name": "identify_bird",
+          "arguments": {
+            "color": "green",
+            "habitat": "forest",
+            "size": "small"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "identify_bird",
+          "arguments": {
+            "color": "green",
+            "habitat": "forest",
+            "size": "small"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "a8cb5bd33b02401b9bd6d905b205e1db",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_68",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 272,
+      "output_tokens": 39,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 18.102035888,
+      "tool_calls": [
+        {
+          "name": "forest_growth_forecast",
+          "arguments": {
+            "location": "Yellowstone National Park",
+            "years": 5,
+            "include_human_impact": true
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "forest_growth_forecast",
+          "arguments": {
+            "location": "Yellowstone National Park",
+            "years": 5,
+            "include_human_impact": true
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "a18609c518cccc27bd72429cd2c799fa",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_69",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.6666666666666666,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 255,
+      "output_tokens": 40,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 17.012152952,
+      "tool_calls": [
+        {
+          "name": "ecology_get_turtle_population",
+          "arguments": {
+            "location": "Mississippi river",
+            "year": 2020,
+            "species": false
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "ecology_get_turtle_population",
+          "arguments": {
+            "location": "Mississippi river",
+            "year": 2020,
+            "species": true
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "934935bbf15e2c9c925ccef398c97fc1",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_70",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 307,
+      "output_tokens": 35,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.065871021,
+      "tool_calls": [
+        {
+          "name": "calculate_vehicle_emission",
+          "arguments": {
+            "vehicle_type": "gas",
+            "miles_driven": 1500
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_vehicle_emission",
+          "arguments": {
+            "vehicle_type": "gas",
+            "miles_driven": 1500,
+            "emission_factor": {
+              "$any": [
+                "$absent",
+                355.48
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "51de807ffd2eebd756c4e847ee4ff77f",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_71",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 269,
+      "output_tokens": 34,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 18.245584737,
+      "tool_calls": [
+        {
+          "name": "generate_DNA_sequence",
+          "arguments": {
+            "length": 100,
+            "preferences": [
+              "G",
+              "C"
+            ]
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "generate_DNA_sequence",
+          "arguments": {
+            "length": 100,
+            "preferences": {
+              "$any": [
+                [
+                  "G",
+                  "C"
+                ],
+                [
+                  "C",
+                  "G"
+                ]
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d2f22e41b13c40b19c1c4d31addd4bca",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_72",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 321,
+      "output_tokens": 44,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 23.842713791,
+      "tool_calls": [
+        {
+          "name": "calculate_fitness",
+          "arguments": {
+            "trait_values": [
+              0.8,
+              0.7
+            ],
+            "trait_contributions": [
+              0.4,
+              0.6
+            ]
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_fitness",
+          "arguments": {
+            "trait_values": [
+              0.8,
+              0.7
+            ],
+            "trait_contributions": [
+              0.4,
+              0.6
+            ]
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "8927d4b15de2755cf3886464fc5c9989",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_73",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 260,
+      "output_tokens": 29,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 13.475383276,
+      "tool_calls": [
+        {
+          "name": "population_projections",
+          "arguments": {
+            "country": "United States",
+            "years": 20
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "population_projections",
+          "arguments": {
+            "country": {
+              "$any": [
+                "United States",
+                "USA"
+              ]
+            },
+            "years": 20,
+            "growth_rate": {
+              "$any": [
+                "$absent",
+                1.2
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "bf67bdc0f22933b1563edc984bc2fbd9",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_74",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 302,
+      "output_tokens": 42,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 23.901861269,
+      "tool_calls": [
+        {
+          "name": "calculate_bacteria_evolution_rate",
+          "arguments": {
+            "start_population": 5000,
+            "duplication_frequency": 1,
+            "duration": 6
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_bacteria_evolution_rate",
+          "arguments": {
+            "start_population": 5000,
+            "duplication_frequency": 1,
+            "duration": 6,
+            "generation_time": {
+              "$any": [
+                20,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "96f60838fe6a7590fc2c8ef0df5dbe32",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_75",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 271,
+      "output_tokens": 44,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.661617613,
+      "tool_calls": [
+        {
+          "name": "elephant_population_estimate",
+          "arguments": {
+            "current_population": 35000,
+            "growth_rate": 0.015,
+            "years": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "elephant_population_estimate",
+          "arguments": {
+            "current_population": 35000,
+            "growth_rate": 0.015,
+            "years": 5
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "1e65e3fa52b6b285f81301ad76107075",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_76",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 273,
+      "output_tokens": 39,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.516444063,
+      "tool_calls": [
+        {
+          "name": "prediction_evolution",
+          "arguments": {
+            "species": "Homo Sapiens",
+            "years": 50,
+            "model": "Darwin"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "prediction_evolution",
+          "arguments": {
+            "species": {
+              "$any": [
+                "Homo Sapiens",
+                "homo sapiens",
+                "Homo sapiens"
+              ]
+            },
+            "years": 50,
+            "model": "Darwin"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "2384e90505ddc23c274113ef4883c5e6",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_77",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 260,
+      "output_tokens": 35,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 16.665965788,
+      "tool_calls": [
+        {
+          "name": "restaurant_find_nearby",
+          "arguments": {
+            "location": "Los Angeles, CA",
+            "dietary_preference": [
+              "Vegan"
+            ]
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "restaurant_find_nearby",
+          "arguments": {
+            "location": "Los Angeles, CA",
+            "dietary_preference": [
+              "Vegan"
+            ]
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "056a2d9eeb78a652f3ba2a9ea0cafa48",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_78",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 273,
+      "output_tokens": 34,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 17.858193453,
+      "tool_calls": [
+        {
+          "name": "average_temperature",
+          "arguments": {
+            "location": "Austin",
+            "days": 3,
+            "temp_unit": "Celsius"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "average_temperature",
+          "arguments": {
+            "location": "Austin",
+            "days": 3,
+            "temp_unit": "Celsius"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d1b9a8f837a0b29ddd0eb6863896a909",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_79",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 268,
+      "output_tokens": 51,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 23.287853429,
+      "tool_calls": [
+        {
+          "name": "create_histogram",
+          "arguments": {
+            "data": [
+              85,
+              90,
+              88,
+              92,
+              86,
+              89,
+              91
+            ],
+            "bins": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "create_histogram",
+          "arguments": {
+            "data": [
+              85,
+              90,
+              88,
+              92,
+              86,
+              89,
+              91
+            ],
+            "bins": 5
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "ad54ef68ee7bd08c4d27785bc49c90a0",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_80",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 303,
+      "output_tokens": 45,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 21.878878189,
+      "tool_calls": [
+        {
+          "name": "find_restaurants",
+          "arguments": {
+            "location": "Manhattan",
+            "food_type": "Thai",
+            "number": 5,
+            "dietary_requirements": [
+              "vegan"
+            ]
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "find_restaurants",
+          "arguments": {
+            "location": {
+              "$any": [
+                "Manhattan, New York City",
+                "Manhattan",
+                "Manhattan, New York",
+                "Manhattan, NY",
+                "Manhattan, NYC"
+              ]
+            },
+            "food_type": "Thai",
+            "number": 5,
+            "dietary_requirements": {
+              "$any": [
+                [
+                  "vegan"
+                ],
+                [
+                  "Vegan"
+                ]
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "93ad36615d51712f982ebdc40100125b",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_81",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 262,
+      "output_tokens": 40,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 17.427198816,
+      "tool_calls": [
+        {
+          "name": "map_routing_fastest_route",
+          "arguments": {
+            "start_location": "San Francisco",
+            "end_location": "Los Angeles",
+            "avoid_tolls": true
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "map_routing_fastest_route",
+          "arguments": {
+            "start_location": {
+              "$any": [
+                "San Francisco",
+                "SF"
+              ]
+            },
+            "end_location": {
+              "$any": [
+                "Los Angeles",
+                "LA"
+              ]
+            },
+            "avoid_tolls": true
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "36dedf08565fb93393d081f49f588f22",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_82",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 226,
+      "output_tokens": 46,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.2581447,
+      "tool_calls": [
+        {
+          "name": "calculate_average",
+          "arguments": {
+            "numbers": [
+              12,
+              15,
+              18,
+              20,
+              21,
+              26,
+              30
+            ]
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_average",
+          "arguments": {
+            "numbers": [
+              12.0,
+              15.0,
+              18.0,
+              20.0,
+              21.0,
+              26.0,
+              30.0
+            ]
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "191416c956cc185c02d7af819998263a",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_83",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.3333333333333333,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 315,
+      "output_tokens": 67,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 34.537043512,
+      "tool_calls": [
+        {
+          "name": "calculate_distance",
+          "arguments": {
+            "coord1": [
+              33.4484,
+              112.074
+            ],
+            "coord2": [
+              34.0522,
+              118.2437
+            ],
+            "unit": "miles"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_distance",
+          "arguments": {
+            "coord1": [
+              33.4484,
+              -112.074
+            ],
+            "coord2": [
+              34.0522,
+              -118.2437
+            ],
+            "unit": "miles"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "225f718e483fc8eafa7bc018732b0ea4",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_84",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 270,
+      "output_tokens": 36,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 18.732591433,
+      "tool_calls": [
+        {
+          "name": "calculate_bmi",
+          "arguments": {
+            "weight": 85,
+            "height": 180,
+            "unit": "metric"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_bmi",
+          "arguments": {
+            "weight": 85,
+            "height": 180,
+            "unit": {
+              "$any": [
+                "metric",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "2fb83ddb73267a5ac2a2bc800fe8279d",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_85",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 290,
+      "output_tokens": 42,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 23.766057208,
+      "tool_calls": [
+        {
+          "name": "geo_distance_calculate",
+          "arguments": {
+            "start_location": "Boston, MA",
+            "end_location": "Washington, D.C.",
+            "units": "miles"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "geo_distance_calculate",
+          "arguments": {
+            "start_location": "Boston, MA",
+            "end_location": "Washington, D.C.",
+            "units": {
+              "$any": [
+                "miles",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "f700a4a5de3e959630de25678e07fa32",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_86",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 308,
+      "output_tokens": 46,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 21.469464694,
+      "tool_calls": [
+        {
+          "name": "city_distance_find_shortest",
+          "arguments": {
+            "start_city": "New York",
+            "end_city": "Los Angeles",
+            "transportation": "train",
+            "allow_transfer": true
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "city_distance_find_shortest",
+          "arguments": {
+            "start_city": "New York",
+            "end_city": "Los Angeles",
+            "transportation": "train",
+            "allow_transfer": true
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "825d2fa58db11304c830f9fa69fc9fd0",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_87",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 242,
+      "output_tokens": 38,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 17.461495675,
+      "tool_calls": [
+        {
+          "name": "array_sort",
+          "arguments": {
+            "list": [
+              5,
+              3,
+              4,
+              1,
+              2
+            ],
+            "order": "ascending"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "array_sort",
+          "arguments": {
+            "list": [
+              5.0,
+              3.0,
+              4.0,
+              1.0,
+              2.0
+            ],
+            "order": "ascending"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "175a459c7997e0bf9dc7e6d4c10e9a90",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_88",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 245,
+      "output_tokens": 34,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 13.787632433,
+      "tool_calls": [
+        {
+          "name": "calculate_BMI",
+          "arguments": {
+            "weight_kg": 70,
+            "height_m": 1.75
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_BMI",
+          "arguments": {
+            "weight_kg": 70,
+            "height_m": 1.75
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "fe122482d4e43d172ada4b364a5a99dd",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_89",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.75,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 345,
+      "output_tokens": 49,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 25.115713524,
+      "tool_calls": [
+        {
+          "name": "db_fetch_records",
+          "arguments": {
+            "database_name": "StudentDB",
+            "table_name": "students",
+            "conditions": {
+              "school": "Bluebird High School"
+            },
+            "fetch_limit": 0
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "db_fetch_records",
+          "arguments": {
+            "database_name": "StudentDB",
+            "table_name": "students",
+            "conditions": {
+              "department": "Science",
+              "school": {
+                "$any": [
+                  "Bluebird High School",
+                  "Bluebird HS"
+                ]
+              }
+            },
+            "fetch_limit": {
+              "$any": [
+                "$absent",
+                0
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d96b7741f8bb8ec44af0456d51a330eb",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_90",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 297,
+      "output_tokens": 45,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 20.306095524,
+      "tool_calls": [
+        {
+          "name": "employee_fetch_data",
+          "arguments": {
+            "company_name": "ABC Ltd.",
+            "employee_id": 345,
+            "data_field": [
+              "Personal Info",
+              "Job History"
+            ]
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "employee_fetch_data",
+          "arguments": {
+            "company_name": "ABC Ltd.",
+            "employee_id": 345,
+            "data_field": [
+              "Personal Info",
+              "Job History"
+            ]
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "0670419f9769db99f49554c2d4dbf34c",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_91",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.6666666666666666,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 257,
+      "output_tokens": 39,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 20.879848029,
+      "tool_calls": [
+        {
+          "name": "get_restaurant",
+          "arguments": {
+            "cuisine": "sushi",
+            "location": "Boston",
+            "condition": "operating days, Sunday"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_restaurant",
+          "arguments": {
+            "cuisine": "sushi",
+            "location": "Boston",
+            "condition": {
+              "$any": [
+                "open on Sundays",
+                "opens on Sundays"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "b03a9e31c127bb05008bc46804d92aa6",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_92",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 271,
+      "output_tokens": 44,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 17.784473797,
+      "tool_calls": [
+        {
+          "name": "imdb_find_movies_by_actor",
+          "arguments": {
+            "actor_name": "Leonardo DiCaprio",
+            "year": 2010,
+            "category": "all"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "imdb_find_movies_by_actor",
+          "arguments": {
+            "actor_name": "Leonardo DiCaprio",
+            "year": 2010,
+            "category": {
+              "$any": [
+                "$absent",
+                "all"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "989c4fce6cc4b33e668d81f177b962fb",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_93",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 290,
+      "output_tokens": 38,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.235159675,
+      "tool_calls": [
+        {
+          "name": "get_theater_movie_releases",
+          "arguments": {
+            "location": "LA",
+            "timeframe": 7,
+            "format": "IMAX"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "get_theater_movie_releases",
+          "arguments": {
+            "location": "LA",
+            "timeframe": 7,
+            "format": "IMAX"
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "be0b74cf7ae923cb41c23a4594201101",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_94",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 311,
+      "output_tokens": 55,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 24.698582614,
+      "tool_calls": [
+        {
+          "name": "update_user_info",
+          "arguments": {
+            "user_id": 43523,
+            "update_info": {
+              "name": "John Doe",
+              "email": "johndoe@email.com"
+            },
+            "database": "CustomerInfo"
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "update_user_info",
+          "arguments": {
+            "user_id": 43523,
+            "update_info": {
+              "name": "John Doe",
+              "email": "johndoe@email.com"
+            },
+            "database": {
+              "$any": [
+                "CustomerInfo",
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "d80cf3c29f0b3e92eeccce44a9c133ca",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_95",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 244,
+      "output_tokens": 27,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 16.457138261,
+      "tool_calls": [
+        {
+          "name": "calc_area_triangle",
+          "arguments": {
+            "base": 5,
+            "height": 3
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calc_area_triangle",
+          "arguments": {
+            "base": 5,
+            "height": 3
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "6d7ce4fcef617b1c1c0d7fbfe5b64381",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_96",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.5,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 320,
+      "output_tokens": 61,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 25.196881458,
+      "tool_calls": [
+        {
+          "name": "database_query",
+          "arguments": {
+            "table": "user",
+            "conditions": [
+              {
+                "field": "age",
+                "operation": ">",
+                "value": "25"
+              },
+              {
+                "field": "job",
+                "operation": ">",
+                "value": "engineer"
+              }
+            ]
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "database_query",
+          "arguments": {
+            "table": "user",
+            "conditions": [
+              {
+                "field": "age",
+                "operation": ">",
+                "value": "25"
+              },
+              {
+                "field": "job",
+                "operation": "=",
+                "value": "engineer"
+              }
+            ]
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "1799173c20ec0c188e2a55811537d589",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_97",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 185,
+      "output_tokens": 21,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 10.706239732,
+      "tool_calls": [
+        {
+          "name": "math_factorial",
+          "arguments": {
+            "number": 5
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "math_factorial",
+          "arguments": {
+            "number": 5
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "51c4edc3880eb6f784ed713707ed7a4c",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_98",
+      "success": true,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 1.0,
+      "args_partial": 1.0,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 264,
+      "output_tokens": 28,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 19.571529084,
+      "tool_calls": [
+        {
+          "name": "calculate_clock_angle",
+          "arguments": {
+            "hours": 6,
+            "minutes": 30
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "calculate_clock_angle",
+          "arguments": {
+            "hours": 6,
+            "minutes": 30,
+            "round_to": {
+              "$any": [
+                "$absent",
+                2
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "042f63712e5f7fbdab19e6f4867102fe",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    },
+    {
+      "case_id": "simple_python_99",
+      "success": false,
+      "tool_precision": 1.0,
+      "tool_recall": 1.0,
+      "tool_f1": 1.0,
+      "args_exact": 0.0,
+      "args_partial": 0.8,
+      "trajectory_mode": "strict",
+      "trajectory_match": true,
+      "constraints_ok": true,
+      "answer_ok": true,
+      "steps": 1,
+      "input_tokens": 320,
+      "output_tokens": 45,
+      "cost_usd": 0.0,
+      "cost_known": true,
+      "latency_s": 24.901409369,
+      "tool_calls": [
+        {
+          "name": "plot_sine_wave",
+          "arguments": {
+            "start_range": 0,
+            "end_range": 2.0,
+            "frequency": 5,
+            "phase_shift": 0
+          }
+        }
+      ],
+      "expected_tool_calls": [
+        {
+          "name": "plot_sine_wave",
+          "arguments": {
+            "start_range": 0.0,
+            "end_range": 6.2832,
+            "frequency": 5,
+            "amplitude": {
+              "$any": [
+                1,
+                "$absent"
+              ]
+            },
+            "phase_shift": {
+              "$any": [
+                0,
+                "$absent"
+              ]
+            }
+          }
+        }
+      ],
+      "violations": [],
+      "answer_failures": [],
+      "final_answer": null,
+      "error": null,
+      "exhausted": false,
+      "judge_score": null,
+      "judge_pass": null,
+      "trace_id": "03dfac86661309cee666627032df9c3f",
+      "tags": [
+        "bfcl:simple_python"
+      ]
+    }
+  ]
+}

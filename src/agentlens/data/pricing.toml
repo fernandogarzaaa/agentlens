@@ -1,0 +1,60 @@
+# agentlens default pricing table: USD per 1M tokens.
+#
+# These are list prices as published by the providers and are only a starting point: prices change,
+# so check your provider's pricing page and override with `--pricing my_prices.toml`
+# (entries there take precedence). Models not listed here get an *unknown* cost, never $0.
+#
+# Local models served by llama.cpp / Ollama / vLLM on your own hardware are listed at $0 marginal
+# token cost; put your own amortised hardware price here if you want it counted.
+
+[models."gpt-4o"]
+input_per_mtok = 2.50
+output_per_mtok = 10.00
+cached_input_per_mtok = 1.25
+
+[models."gpt-4o-mini"]
+input_per_mtok = 0.15
+output_per_mtok = 0.60
+cached_input_per_mtok = 0.075
+
+[models."gpt-4.1"]
+input_per_mtok = 2.00
+output_per_mtok = 8.00
+cached_input_per_mtok = 0.50
+
+[models."gpt-4.1-mini"]
+input_per_mtok = 0.40
+output_per_mtok = 1.60
+cached_input_per_mtok = 0.10
+
+[models."gpt-4.1-nano"]
+input_per_mtok = 0.10
+output_per_mtok = 0.40
+cached_input_per_mtok = 0.025
+
+[models."claude-3-5-haiku*"]
+input_per_mtok = 0.80
+output_per_mtok = 4.00
+
+[models."claude-3-5-sonnet*"]
+input_per_mtok = 3.00
+output_per_mtok = 15.00
+
+# Local / self-hosted (zero marginal token cost)
+[models."qwen2.5-*"]
+input_per_mtok = 0.0
+output_per_mtok = 0.0
+
+[models."local-*"]
+input_per_mtok = 0.0
+output_per_mtok = 0.0
+
+# agentlens' deterministic mock model (used by the quickstart and tests). The non-zero price is
+# deliberate so cost accounting is exercised end to end; it is not a real price.
+[models."mock-*"]
+input_per_mtok = 1.00
+output_per_mtok = 2.00
+
+[aliases]
+"gpt-4o-2024-08-06" = "gpt-4o"
+"gpt-4o-mini-2024-07-18" = "gpt-4o-mini"
