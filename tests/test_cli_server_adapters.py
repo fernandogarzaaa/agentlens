@@ -542,3 +542,12 @@ def test_judge_cli_aborts_when_endpoint_is_down(tmp_path, monkeypatch):
         ]
     )
     assert rc == 1
+
+
+@pytest.mark.parametrize("payload", ["[1]", '"x"', "3", '{"cases": [5]}', '{"cases": "x"}'])
+def test_report_and_gate_reject_non_object_results(tmp_path, capsys, payload):
+    bad = tmp_path / "bad.json"
+    bad.write_text(payload)
+    assert main(["report", str(bad)]) == 2
+    assert main(["gate", str(bad), "--config", str(EX / "gate.toml")]) == 2
+    assert "cannot read results" in capsys.readouterr().err

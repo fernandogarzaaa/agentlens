@@ -215,6 +215,11 @@ class EvalResult:
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> EvalResult:
+        if not isinstance(d, dict):
+            raise ValueError("results must be a JSON object")
+        cases = d.get("cases", [])
+        if not isinstance(cases, list) or not all(isinstance(c, dict) for c in cases):
+            raise ValueError("results 'cases' must be a list of objects")
         return cls(
             suite=d.get("suite", ""),
             agent=d.get("agent", ""),
