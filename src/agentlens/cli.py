@@ -277,12 +277,17 @@ def _load_summary(path: str) -> dict[str, Any]:
         data = json.loads(Path(path).read_text(encoding="utf-8"))
     except (OSError, ValueError) as exc:
         raise GateConfigError(f"cannot read results {path}: {exc}") from None
+    if not isinstance(data, dict):
+        raise GateConfigError(f"cannot read results {path}: expected a JSON object")
     if "summary" in data and isinstance(data["summary"], dict):
         return dict(data["summary"])
     if "cases" in data:
         from agentlens.harness import EvalResult
 
-        return EvalResult.from_dict(data).summary
+        try:
+            return EvalResult.from_dict(data).summary
+        except ValueError as exc:
+            raise GateConfigError(f"cannot read results {path}: {exc}") from None
     return dict(data)
 
 
