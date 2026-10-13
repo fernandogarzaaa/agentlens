@@ -3,7 +3,18 @@
 All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses semantic versioning.
 
-## [0.1.0] - unreleased
+## [0.1.1] - 2026-10-13
+
+### Fixed
+- `agentlens report` and `agentlens gate` exit 2 with "cannot read results" when the results
+  file is valid JSON but not an object (or its `cases` are not objects), instead of crashing
+  with a traceback (#3).
+
+### Changed
+- The release workflow's PyPI upload is opt-in (repo variable `PUBLISH_PYPI == 'true'`); the
+  PyPI name `agentlens` belongs to another project, so install from GitHub releases (#2).
+
+## [0.1.0] - not tagged
 
 ### Added
 - Tracer: OpenTelemetry-compatible spans (W3C ids, GenAI semantic-convention attributes) for runs,
